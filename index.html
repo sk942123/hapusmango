@@ -334,13 +334,13 @@ footer{background:var(--ink);padding:72px 56px 36px}
     </div>
     <div id="deliveryNote" style="font-size:0.72rem;font-weight:600;margin-bottom:20px;"></div>
     <div id="orderPreview" style="display:none;background:#f0fdf4;border:1.5px solid #25D366;border-radius:14px;padding:14px;margin-bottom:16px;">
-      <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#1A6B3C;margin-bottom:8px;">✅ Message that will be sent to WhatsApp:</div>
+      <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#1A6B3C;margin-bottom:8px;">📋 Your order summary:</div>
       <pre id="orderPreviewText" style="font-size:0.76rem;color:#1A0F00;white-space:pre-wrap;line-height:1.7;font-family:'Plus Jakarta Sans',sans-serif;"></pre>
     </div>
-    <a id="waOrderBtn" href="#" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#25D366;color:white;padding:15px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.92rem;margin-bottom:10px;">
+    <button onclick="sendCartToWhatsApp()" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#25D366;color:white;padding:15px;border-radius:100px;border:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.92rem;margin-bottom:10px;cursor:pointer;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Order on WhatsApp
-    </a>
+    </button>
     <button onclick="clearCart()" style="display:block;width:100%;background:none;border:1.5px solid var(--border);color:var(--gray);padding:12px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;cursor:pointer;font-weight:600;">Clear Cart</button>
   </div>
 </div>
@@ -353,8 +353,8 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <p class="hero-h2">Sun-Ripened. Farm Fresh. Irresistible.</p>
     <p class="hero-desc">Handpicked Alphonso & Payari mangoes from GI-certified orchards of Devgad, Konkan — no calcium carbide, no cold storage, no middlemen. Farm-direct delivery across Mumbai, Thane & Navi Mumbai in 48 hours.</p>
     <div class="hero-btns">
-      <a href="#shop" class="btn-primary">Shop the Season →</a>
-      <a href="https://wa.link/y88aqh" target="_blank" class="btn-outline">
+    <a href="#shop" class="btn-primary">Shop the Season →</a>
+      <a href="#" onclick="waOpen('hero')" class="btn-outline">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Order on WhatsApp
       </a>
@@ -393,7 +393,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <section class="products" id="shop">
   <div class="prod-hdr">
     <div><div class="sec-tag">Fresh This Season</div><h2 class="sec-h">Choose Your<br><em>Perfect Box</em></h2></div>
-    <a href="https://wa.link/y88aqh" target="_blank" class="see-all">View All</a>
+    <a href="#" onclick="waOpen('viewall')" class="see-all">View All</a>
   </div>
   <div class="pgrid">
     <article class="pcard">
@@ -449,7 +449,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <h2 class="sec-h" style="margin-bottom:28px;">Straight from<br><em>Devgad's Heart</em></h2>
     <p>We source both <strong>Hapus (Alphonso)</strong> and the lesser-known but equally divine <strong>Payari</strong> — two varieties that have made Devgad, Sindhudurg, Maharashtra legendary among mango lovers across India. Our Alphonso mangoes carry the authentic <strong>GI tag of Devgad</strong>, the gold standard of Konkan mangoes.</p>
     <p>Every box is packed the morning it ships. <strong>No middlemen. No cold storage. No calcium carbide ripening chambers.</strong> Just naturally tree-ripened mangoes the way they were meant to taste — delivering the real <strong>Devgad Hapus experience</strong> straight to your door in Mumbai, Thane, Navi Mumbai and Pune.</p>
-    <a href="https://wa.link/y88aqh" target="_blank" class="btn-primary" style="margin-top:8px;width:fit-content;">Order This Season on WhatsApp</a>
+    <a href="#" onclick="waOpen('story')" target="_blank" class="btn-primary" style="margin-top:8px;width:fit-content;">Order This Season on WhatsApp</a>
   </div>
 </section>
 
@@ -488,7 +488,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
         <li>Delivery across Mumbai, Thane, Navi Mumbai & Pune</li>
         <li>Order via WhatsApp — quick, easy, personalised</li>
       </ul>
-      <a href="https://wa.link/y88aqh" target="_blank" class="btn-primary">Enquire for Gifting →</a>
+      <a href="#" onclick="waOpen('gifting')" class="btn-primary">Enquire for Gifting →</a>
     </div>
   </div>
 </section>
@@ -497,13 +497,13 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <section class="collections">
   <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:0;">
     <div><div class="sec-tag">Browse Range</div><h2 class="sec-h">Shop by<br><em>Collection</em></h2></div>
-    <a href="https://wa.link/y88aqh" target="_blank" class="see-all">View All</a>
+    <a href="#" onclick="waOpen('viewall')" class="see-all">View All</a>
   </div>
   <div class="cgrid">
-    <div class="ccard" onclick="window.open('https://wa.link/y88aqh','_blank')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898676/product-jpeg-1000x1000_ydydob.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Alphonso</span><span class="c-sub">GI-certified Devgad · In season now</span></div></div>
-    <div class="ccard" onclick="window.open('https://wa.link/y88aqh','_blank')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898827/20210505_170705_04-72PCS-PAYRI-FULL-WOOD-BOX-PETI-PAYRI-scaled_q7famh.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Payari</span><span class="c-sub">Small, sweet & rare Devgad variety</span></div></div>
-    <div class="ccard" onclick="window.open('https://wa.link/y88aqh','_blank')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898947/OIP_2_pm9ugi.webp') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Aamras Pulp</span><span class="c-sub">Ready to eat · No preservatives</span></div></div>
-    <div class="ccard" onclick="window.open('https://wa.link/y88aqh','_blank')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846886/60733749-c589-46eb-a41d-7f1ee3471366_rciuzx.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Gift Hampers</span><span class="c-sub">Corporate & family gifting Mumbai</span></div></div>
+    <div class="ccard" onclick="waOpen('hapus')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898676/product-jpeg-1000x1000_ydydob.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Alphonso</span><span class="c-sub">GI-certified Devgad · In season now</span></div></div>
+    <div class="ccard" onclick="waOpen('payari')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898827/20210505_170705_04-72PCS-PAYRI-FULL-WOOD-BOX-PETI-PAYRI-scaled_q7famh.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Payari</span><span class="c-sub">Small, sweet & rare Devgad variety</span></div></div>
+    <div class="ccard" onclick="waOpen('aamras')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898947/OIP_2_pm9ugi.webp') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Aamras Pulp</span><span class="c-sub">Ready to eat · No preservatives</span></div></div>
+    <div class="ccard" onclick="waOpen('gifting')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846886/60733749-c589-46eb-a41d-7f1ee3471366_rciuzx.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Gift Hampers</span><span class="c-sub">Corporate & family gifting Mumbai</span></div></div>
   </div>
 </section>
 
@@ -557,7 +557,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <div class="cta-h">Season ends soon.<br><em>Order before it's over.</em></div>
     <div class="cta-sub">Limited stock of authentic Devgad Hapus & Payari — available now.</div>
   </div>
-  <a href="https://wa.link/y88aqh" target="_blank" class="btn-white">Order on WhatsApp →</a>
+  <a href="#" onclick="waOpen('cta')" class="btn-white">Order on WhatsApp →</a>
 </div>
 
 <!-- FOOTER -->
@@ -576,10 +576,10 @@ footer{background:var(--ink);padding:72px 56px 36px}
       </div>
     </div>
     <div class="fcol"><h5>Shop</h5><ul class="flinks">
-      <li><a href="https://wa.link/y88aqh" target="_blank">Hapus Alphonso Classic</a></li>
-      <li><a href="https://wa.link/y88aqh" target="_blank">Payari Mango Box</a></li>
-      <li><a href="https://wa.link/y88aqh" target="_blank">Duo Gift Hamper</a></li>
-      <li><a href="https://wa.link/y88aqh" target="_blank">Hapus Aamras Pulp</a></li>
+      <li><a href="#" onclick="waOpen('footer_hapus')">Hapus Alphonso Classic</a></li>
+      <li><a href="#" onclick="waOpen('footer_payari')">Payari Mango Box</a></li>
+      <li><a href="#" onclick="waOpen('footer_duo')">Duo Gift Hamper</a></li>
+      <li><a href="#" onclick="waOpen('footer_aamras')">Hapus Aamras Pulp</a></li>
     </ul></div>
     <div class="fcol"><h5>Company</h5><ul class="flinks">
       <li><a href="#story">Our Devgad Farm</a></li>
@@ -590,7 +590,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <div class="fcol"><h5>Contact</h5><ul class="flinks">
       <li><a href="tel:+919405074998">+91 94050 74998</a></li>
       <li><a href="#">Andheri(W), Mumbai – 400092</a></li>
-      <li><a href="https://wa.link/y88aqh" target="_blank">WhatsApp Order 💬</a></li>
+      <li><a href="#" onclick="waOpen('footer_wa')">WhatsApp Order 💬</a></li>
       <li><a href="https://g.co/kgs/zveHhXM" target="_blank">Google Reviews ★ 4.9</a></li>
     </ul></div>
   </div>
@@ -601,7 +601,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 </footer>
 
 <!-- WHATSAPP FAB — Real Icon -->
-<a class="wa" href="https://wa.link/y88aqh" target="_blank" title="Order Devgad Hapus on WhatsApp" aria-label="Order on WhatsApp">
+<a class="wa" id="waFab" href="#" onclick="waOpen('fab')" target="_blank" title="Order Devgad Hapus on WhatsApp" aria-label="Order on WhatsApp">
   <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -609,7 +609,30 @@ footer{background:var(--ink);padding:72px 56px 36px}
 
 <script>
 const WA_NUMBER='919405074998';
-let cart=[];
+
+// Pre-filled WhatsApp messages per button/context
+const WA_MESSAGES={
+  hero:     `Hi! 👋 I'm interested in ordering Devgad Hapus & Payari Alphonso mangoes.\n\nCould you please share:\n• Available boxes & prices\n• Delivery timeline to my area\n• Payment details\n\nThank you! 🥭`,
+  fab:      `Hi! 👋 I'd like to order fresh Devgad Hapus mangoes.\n\nCould you please help me with availability and delivery details?\n\nThank you! 🥭`,
+  story:    `Hi! 👋 I just read about your Devgad farm and I'd love to order this season.\n\nCould you please confirm:\n• Current stock availability (Hapus / Payari)\n• Delivery to my area\n• Payment options\n\nThank you! 🥭`,
+  viewall:  `Hi! 👋 I'd like to see your full range of Devgad mango products.\n\nCould you share all available boxes, prices and combos for Season 2026?\n\nThank you! 🥭`,
+  hapus:    `Hi! 👋 I'm interested in ordering the *Hapus Alphonso* box.\n\n🥭 Hapus Classic – 12 Devgad Alphonso mangoes (200–220g each) – ₹799\n\nCould you confirm availability and delivery to my area?\n\nThank you!`,
+  payari:   `Hi! 👋 I'm interested in ordering the *Payari Mango Box*.\n\n🥭 Payari Box – 12 Payari mangoes (rare Devgad variety) – ₹699\n\nCould you confirm availability and delivery to my area?\n\nThank you!`,
+  aamras:   `Hi! 👋 I'm interested in ordering *Hapus Aamras*.\n\n🫙 Hapus Aamras – 500g Alphonso mango pulp – ₹299 (was ₹499)\n\nCould you confirm availability and delivery details?\n\nThank you!`,
+  gifting:  `Hi! 👋 I'm interested in *Mango Gift Hampers / Corporate Gifting*.\n\n🎁 Duo Gift Hamper – Hapus + Payari – ₹1,499\n\nCould you please share:\n• Bulk / corporate gifting options & pricing\n• Customisation or branding options\n• Delivery timeline & minimum order\n\nThank you!`,
+  cta:      `Hi! 👋 I'd like to place an order before the season ends!\n\nCould you please confirm what's currently in stock and delivery to my area?\n\nThank you! 🥭`,
+  footer_hapus:  `Hi! 👋 I'd like to order *Hapus Alphonso Classic* (₹799 for 12 mangoes).\n\nCould you confirm availability and delivery details? Thank you! 🥭`,
+  footer_payari: `Hi! 👋 I'd like to order the *Payari Box* (₹699 for 12 mangoes).\n\nCould you confirm availability and delivery details? Thank you! 🥭`,
+  footer_duo:    `Hi! 👋 I'd like to order the *Duo Gift Hamper* (₹1,499 – Hapus + Payari).\n\nCould you confirm availability and delivery details? Thank you! 🎁`,
+  footer_aamras: `Hi! 👋 I'd like to order *Hapus Aamras* (₹299 for 500g pulp).\n\nCould you confirm availability and delivery details? Thank you! 🫙`,
+  footer_wa:     `Hi! 👋 I have a question about Devgad Hapus & Payari mangoes.\n\nCould you please help me? Thank you! 🥭`,
+};
+
+function waOpen(type){
+  const msg=WA_MESSAGES[type]||WA_MESSAGES.fab;
+  window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
+  return false;
+}
 
 function toggleCart(){
   const d=document.getElementById('cartDrawer'),o=document.getElementById('cartOverlay');
@@ -631,15 +654,28 @@ function addToCart(e,btn){
   cb.style.transform='scale(1.12)';setTimeout(()=>cb.style.transform='',200);
 }
 
+function buildCartMsg(){
+  const lines = cart.map(i=>`• ${i.name} x${i.qty} = Rs.${(i.price*i.qty).toLocaleString()}`).join('\n');
+  const total = cart.reduce((s,i)=>s+(i.price*i.qty),0);
+  const delivery = total>=999 ? 'FREE Delivery 🎉' : 'Delivery charges applicable';
+  return `Hi! 👋 I'd like to place an order from Hapus Devgad:\n\n🛒 *My Order:*\n${lines}\n\n💰 *Total: Rs.${total.toLocaleString()}*\n📦 ${delivery}\n\nPlease confirm availability, my delivery address and payment details.\n\nThank you! 🥭`;
+}
+
+function sendCartToWhatsApp(){
+  if(!cart.length){ alert('Your cart is empty! Please add items first. 🥭'); return; }
+  const msg = buildCartMsg();
+  window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
+}
+
 function renderCart(){
-  const con=document.getElementById('cartItems'),ftr=document.getElementById('cartFooter');
-  const tel=document.getElementById('cartTotal'),note=document.getElementById('deliveryNote');
+  const con=document.getElementById('cartItems'), ftr=document.getElementById('cartFooter');
+  const tel=document.getElementById('cartTotal'), note=document.getElementById('deliveryNote');
   if(!cart.length){
     con.innerHTML='<p style="color:var(--gray);font-size:0.88rem;text-align:center;padding-top:48px;line-height:1.7;">Your cart is empty.<br>Pick some mangoes! 🥭</p>';
-    ftr.style.display='none';return;
+    ftr.style.display='none'; return;
   }
   ftr.style.display='block';
-  let total=0,html='';
+  let total=0, html='';
   cart.forEach((item,idx)=>{
     total+=item.price*item.qty;
     html+=`<div style="display:flex;align-items:center;justify-content:space-between;background:var(--orange-xpale);border:1px solid var(--border);border-radius:14px;padding:14px 16px;">
@@ -655,11 +691,8 @@ function renderCart(){
   tel.textContent='₹'+total.toLocaleString();
   note.style.color=total>=999?'var(--green)':'var(--orange)';
   note.textContent=total>=999?'🎉 You qualify for FREE delivery!':`Add ₹${(999-total).toLocaleString()} more for FREE delivery 🚚`;
-  const lines=cart.map(i=>`• ${i.name} x${i.qty} = Rs.${(i.price*i.qty).toLocaleString()}`).join('\n');
-  const delivery=total>=999?'Free Delivery':'Delivery charges applicable';
-  const msg='New Order - Hapus Devgad\n\n'+lines+'\n\nTotal: Rs.'+total.toLocaleString()+' ('+delivery+')\n\nPlease confirm availability and delivery details. Thank you!';
-  document.getElementById('waOrderBtn').href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
-  document.getElementById('orderPreviewText').textContent=msg;
+  // update preview
+  document.getElementById('orderPreviewText').textContent=buildCartMsg();
   document.getElementById('orderPreview').style.display='block';
 }
 
