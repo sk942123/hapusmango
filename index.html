@@ -175,8 +175,8 @@
   .nav-links a:hover{color:var(--orange)}
   .cart-btn{background:var(--orange);color:white;border:none;padding:10px 24px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all 0.2s;display:flex;align-items:center;gap:8px}
   .cart-btn:hover{background:var(--orange-light);transform:translateY(-1px);box-shadow:0 8px 20px rgba(249,101,0,0.25)}
-  .hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:1fr 1fr;background:var(--off-white);position:relative;overflow:hidden}
-  .hero::before{content:'';position:absolute;width:800px;height:800px;background:radial-gradient(circle,rgba(249,101,0,0.07) 0%,transparent 65%);top:-200px;right:-200px;pointer-events:none}
+  .hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/afa34935-d19c-48a7-b98e-2fb08ab38b53_qcfuxg.jpg') center center / cover no-repeat;}
+  .hero::before{content:'';position:absolute;inset:0;background:rgba(255,243,225,0.72);backdrop-filter:blur(1px);pointer-events:none;z-index:1}
   .hero-left{padding:80px 48px 80px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
   .hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--orange-pale);border:1px solid rgba(249,101,0,0.2);color:var(--orange);border-radius:100px;padding:6px 16px;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:32px;width:fit-content;animation:fadeUp 0.6s ease both}
   .hero-pill::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%}
@@ -193,8 +193,9 @@
   .stat-n{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:900;color:var(--ink);display:block;line-height:1;margin-bottom:4px}
   .stat-l{font-size:0.7rem;font-weight:600;color:var(--gray);letter-spacing:0.07em;text-transform:uppercase}
   .hero-right{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .hero-visual{position:relative;width:100%;height:100%;background:linear-gradient(145deg,#FFF3E0 0%,#FFD580 50%,#FF9500 100%);display:flex;align-items:center;justify-content:center}
-  .hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 45%,rgba(255,255,255,0.3) 0%,transparent 60%)}
+  .hero-visual{position:relative;width:100%;height:100%;background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846882/41c980c4-1065-4ae3-96df-c39cdd6bcd45_hdjscf.jpg') center center / cover no-repeat;display:flex;align-items:center;justify-content:center}
+  .hero-visual::after{content:'';position:absolute;inset:0;background:rgba(255,180,50,0.35);pointer-events:none}
+  .hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 45%,rgba(255,255,255,0.15) 0%,transparent 60%);z-index:1}
   .blob{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,#FFD54F 0%,#FF9500 45%,#F96500 90%);clip-path:polygon(18% 4%,82% 2%,97% 28%,94% 76%,72% 97%,28% 98%,4% 74%,3% 28%);animation:blob 7s ease-in-out infinite}
   @keyframes blob{0%,100%{clip-path:polygon(18% 4%,82% 2%,97% 28%,94% 76%,72% 97%,28% 98%,4% 74%,3% 28%)}50%{clip-path:polygon(20% 6%,80% 1%,96% 30%,96% 74%,74% 96%,26% 97%,3% 76%,5% 26%)}}
   .mango-big{position:relative;z-index:2;font-size:clamp(110px,15vw,200px);filter:drop-shadow(0 32px 64px rgba(0,0,0,0.18));animation:mangoBob 4s ease-in-out infinite}
@@ -455,7 +456,7 @@
       </div>
     </article>
     <article class="pcard">
-      <div class="pcard-img"><span class="ptag ptag-new">Payari</span><span class="pcard-emoji" role="img" aria-label="Payari Mango">🥭</span></div>
+      <div class="pcard-img" style="padding:0;overflow:hidden;"><span class="ptag ptag-new">Payari</span><img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/351029e9-6e6c-4ad4-8179-cd44cf1d3d11_tnwphi.jpg" alt="Payari Box — Devgad Payari Mangoes" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div class="pcard-body">
         <h3 class="pcard-name">Payari Box</h3>
         <div class="pcard-wt">12 Payari mangoes · rare Devgad variety · sweeter & fragrant</div>
@@ -463,7 +464,7 @@
       </div>
     </article>
     <article class="pcard">
-      <div class="pcard-img"><span class="pcard-emoji" role="img" aria-label="Mango Gift Hamper">🎁</span></div>
+      <div class="pcard-img" style="padding:0;overflow:hidden;"><img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846882/b0c37d6e-e438-4964-99df-34c0c59f8632_m6jct3.jpg" alt="Duo Gift Hamper — Hapus & Payari Mango Gift Box" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div class="pcard-body">
         <h3 class="pcard-name">Duo Gift Hamper</h3>
         <div class="pcard-wt">Hapus Alphonso + Payari · Premium mango gift box</div>
@@ -471,7 +472,7 @@
       </div>
     </article>
     <article class="pcard">
-      <div class="pcard-img"><span class="ptag ptag-off">₹200 Off</span><span class="pcard-emoji" role="img" aria-label="Aamras Pulp">🫙</span></div>
+      <div class="pcard-img" style="padding:0;overflow:hidden;"><span class="ptag ptag-off">₹200 Off</span><img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774897908/OIP_1_eawgmp.webp" alt="Hapus Aamras — Alphonso Mango Pulp" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div class="pcard-body">
         <h3 class="pcard-name">Hapus Aamras</h3>
         <div class="pcard-wt">500g · Alphonso mango pulp · ready to eat · no preservatives</div>
@@ -526,7 +527,7 @@
 <section class="gifting" id="gifting">
   <div><div class="sec-tag">For Every Occasion</div><h2 class="sec-h">Mango Gift Hampers &<br><em>Corporate Gifting</em></h2></div>
   <div class="gift-grid">
-    <div class="gift-visual" role="img" aria-label="Premium Hapus mango gift hamper">🎁</div>
+    <div class="gift-visual" role="img" aria-label="Premium Hapus mango gift hamper" style="padding:0;overflow:hidden;"><img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846882/b0c37d6e-e438-4964-99df-34c0c59f8632_m6jct3.jpg" alt="Hapus Payari Duo Gift Hamper — Premium Mango Gift Box Mumbai" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:28px;"></div>
     <div class="gift-text">
       <p>Looking for a <strong>premium mango gift box in Mumbai</strong>? Send a Duo Hapus & Payari Hamper to family, friends, or colleagues — and let the King of Mangoes do the talking.</p>
       <p>Our gift hampers are perfect for <strong>corporate gifting, family occasions, weddings, and festive seasons</strong>. Each box is beautifully packed and delivered fresh within 48 hours.</p>
