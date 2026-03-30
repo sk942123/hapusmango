@@ -654,6 +654,19 @@ function addToCart(e,btn){
   cb.style.transform='scale(1.12)';setTimeout(()=>cb.style.transform='',200);
 }
 
+function addToCart(e, btn){
+  e.stopPropagation();
+  const name=btn.dataset.name, price=parseInt(btn.dataset.price);
+  const ex=cart.find(i=>i.name===name);
+  if(ex){ex.qty++;}else{cart.push({name,price,qty:1});}
+  btn.textContent='✓'; btn.style.background='#1A6B3C';
+  setTimeout(()=>{btn.textContent='+'; btn.style.background='var(--orange)';},1200);
+  document.getElementById('cartCount').textContent=cart.reduce((s,i)=>s+i.qty,0);
+  const cb=document.getElementById('cartBtn');
+  cb.style.transform='scale(1.12)';
+  setTimeout(()=>cb.style.transform='',200);
+}
+
 function buildCartMsg(){
   const lines = cart.map(i=>`• ${i.name} x${i.qty} = Rs.${(i.price*i.qty).toLocaleString()}`).join('\n');
   const total = cart.reduce((s,i)=>s+(i.price*i.qty),0);
@@ -750,7 +763,15 @@ function nlSubmit(){
   document.getElementById('nlPhone').value='';
 }
 
-// NAV SHADOW
+// expose globally so inline onclick can find them
+window.addToCart = addToCart;
+window.sendCartToWhatsApp = sendCartToWhatsApp;
+window.changeQty = changeQty;
+window.clearCart = clearCart;
+window.toggleCart = toggleCart;
+window.toggleFaq = toggleFaq;
+window.waOpen = waOpen;
+window.nlSubmit = nlSubmit;
 window.addEventListener('scroll',()=>{
   document.getElementById('topnav').style.boxShadow=window.scrollY>40?'0 4px 24px rgba(0,0,0,0.07)':'none';
 });
