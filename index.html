@@ -36,8 +36,12 @@ var MSGS={
   fab:     'Hi! 👋 I want to order fresh Devgad Hapus mangoes.\n\nCould you help with availability & delivery?\n\nThank you! 🥭',
   story:   'Hi! 👋 I read about your Devgad farm and want to order this season.\n\nCould you confirm stock, delivery & payment options?\n\nThank you! 🥭',
   viewall: 'Hi! 👋 I want to see your full range of Devgad mango products for Season 2026.\n\nThank you! 🥭',
-  hapus:   'Hi! 👋 I want to order the *Hapus Classic Box*.\n\n🥭 Hapus Classic – 12 Devgad Alphonso mangoes – ₹1499\n\nCould you confirm availability & delivery?\n\nThank you!',
-  payari:  'Hi! 👋 I want to order the *Payari Mango Box*.\n\n🥭 Payari Box – 12 Payari mangoes – ₹1299\n\nCould you confirm availability & delivery?\n\nThank you!',
+  hapus1:  'Hi! 👋 I want to order *Grade 1 — Jumbo Hapus*.\n\n🥭 Grade 1 – 300–325g each – ₹1,500/dozen\n\nCould you confirm availability & delivery?\n\nThank you!',
+  hapus2:  'Hi! 👋 I want to order *Grade 2 — Super Large Hapus*.\n\n🥭 Grade 2 – 275–300g each – ₹1,400/dozen\n\nCould you confirm availability & delivery?\n\nThank you!',
+  hapus3:  'Hi! 👋 I want to order *Grade 3 — Large Hapus*.\n\n🥭 Grade 3 – 250–275g each – ₹1,300/dozen\n\nCould you confirm availability & delivery?\n\nThank you!',
+  hapus4:  'Hi! 👋 I want to order *Grade 4 — Medium Hapus*.\n\n🥭 Grade 4 – 225–250g each – ₹1,200/dozen\n\nCould you confirm availability & delivery?\n\nThank you!',
+  hapus5:  'Hi! 👋 I want to order *Grade 5 — Standard Hapus*.\n\n🥭 Grade 5 – 200–225g each – ₹1,100/dozen\n\nCould you confirm availability & delivery?\n\nThank you!',
+  payari:  'Hi! 👋 I want to order the *Payari Mango Box*.\n\n🥭 Payari Box – 12 Payari mangoes – ₹1,299\n\nCould you confirm availability & delivery?\n\nThank you!',
   aamras:  'Hi! 👋 I want to order *Hapus Aamras*.\n\n🫙 Hapus Aamras – 500g Alphonso pulp – ₹299\n\nCould you confirm availability & delivery?\n\nThank you!',
   gifting: 'Hi! 👋 I am interested in *Mango Gift Hampers / Corporate Gifting*.\n\n🎁 Duo Gift Hamper – Hapus + Payari – ₹2,500\n\nCould you share bulk pricing, customisation & delivery options?\n\nThank you!',
   cta:     'Hi! 👋 I want to place an order before the season ends!\n\nWhat is currently in stock and delivery to my area?\n\nThank you! 🥭'
@@ -161,7 +165,6 @@ function updateCountdown(){
   document.getElementById('cdS').textContent=p(ss);
 }
 
-/* mobile menu */
 function toggleMenu(){
   var m=document.getElementById('mobileMenu');
   m.style.display=m.style.display==='flex'?'none':'flex';
@@ -175,11 +178,9 @@ html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
 .logo-mark{width:48px;height:48px;flex-shrink:0;border-radius:8px;object-fit:cover}
 
-/* ANNOUNCE — fixed */
 .announce{background:var(--green);color:white;text-align:center;padding:9px 16px;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;position:fixed;top:0;left:0;right:0;z-index:102}
 .announce span{color:var(--yellow)}
 
-/* NAV — fixed below announce */
 nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand-name{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:900;letter-spacing:-0.04em;color:var(--ink)}
@@ -193,12 +194,10 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .hamburger{display:none;background:none;border:1.5px solid var(--border);border-radius:8px;width:38px;height:38px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:8px}
 .hamburger span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px}
 
-/* MOBILE MENU */
 #mobileMenu{display:none;position:fixed;top:106px;left:0;right:0;background:white;border-bottom:1px solid var(--border);flex-direction:column;z-index:99;padding:20px 24px;gap:0;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
 #mobileMenu a{display:block;padding:14px 0;font-size:0.9rem;font-weight:600;color:var(--gray);text-decoration:none;border-bottom:1px solid var(--border);letter-spacing:0.04em}
 #mobileMenu a:last-child{border-bottom:none;color:var(--orange)}
 
-/* HERO — top padding accounts for announce+nav */
 .hero{min-height:100vh;padding-top:106px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/afa34935-d19c-48a7-b98e-2fb08ab38b53_qcfuxg.jpg') center/cover no-repeat}
 .hero::before{content:'';position:absolute;inset:0;background:rgba(255,243,225,0.72);pointer-events:none;z-index:1}
 .hero-left{padding:80px 48px 80px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
@@ -225,14 +224,12 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .hb-t1{font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray);display:block}
 .hb-t2{font-size:0.88rem;font-weight:700;color:var(--ink);display:block}
 
-/* TICKER */
 .ticker{background:var(--orange);padding:12px 0;overflow:hidden;white-space:nowrap}
 .ticker-track{display:inline-flex;animation:ticker 22s linear infinite}
 .tick-item{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:white;padding:0 32px;display:flex;align-items:center;gap:12px}
 .tick-item::after{content:'✦';font-size:0.5rem;opacity:0.7}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* TRUST */
 .trust{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-bottom:1px solid var(--border)}
 .trust-item{padding:28px 32px;display:flex;align-items:center;gap:16px;border-right:1px solid var(--border)}
 .trust-item:last-child{border-right:none}
@@ -250,14 +247,51 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .see-all{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:6px;cursor:pointer}
 .see-all::after{content:'→';font-size:1rem}
 .see-all:hover{color:var(--orange)}
-.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+/* SIZE GUIDE STRIP */
+.size-guide{background:var(--ink);padding:40px 56px;text-align:center}
+.size-guide h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:white;margin-bottom:6px}
+.size-guide h3 em{color:var(--yellow);font-style:italic}
+.size-guide p{color:rgba(255,255,255,0.5);font-size:0.82rem;margin-bottom:28px}
+.size-cards{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.size-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px 20px;min-width:140px;text-align:center;cursor:pointer;transition:all 0.2s}
+.size-card:hover{background:rgba(249,101,0,0.2);border-color:var(--orange);transform:translateY(-3px)}
+.size-card .grade{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--yellow);display:block;line-height:1;margin-bottom:4px}
+.size-card .wt{font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.04em;display:block;margin-bottom:8px}
+.size-card .pr{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:900;color:white;display:block}
+.size-card .pr-lbl{font-size:0.62rem;color:rgba(255,255,255,0.4);display:block;margin-top:2px}
+
+/* HAPUS SIZE GRID — 5 cards */
+.hapus-section{padding:96px 56px;background:var(--off-white)}
+.hapus-intro{margin-bottom:48px}
+.hapus-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.hcard{background:white;border-radius:22px;overflow:hidden;border:1px solid var(--border);transition:transform 0.3s,box-shadow 0.3s;position:relative}
+.hcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(249,101,0,0.12)}
+.hcard-img{height:180px;position:relative;overflow:hidden}
+.hcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s}
+.hcard:hover .hcard-img img{transform:scale(1.07)}
+.grade-badge{position:absolute;top:12px;left:12px;z-index:2;background:var(--orange);color:white;font-family:'Fraunces',serif;font-size:0.9rem;font-weight:900;padding:4px 12px;border-radius:100px}
+.popular-badge{position:absolute;top:12px;right:12px;z-index:2;background:var(--green);color:white;font-size:0.58rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 9px;border-radius:100px}
+.hcard-body{padding:18px}
+.hcard-name{font-family:'Fraunces',serif;font-size:0.95rem;font-weight:800;color:var(--ink);margin-bottom:2px}
+.hcard-wt{font-size:0.7rem;color:var(--gray);margin-bottom:4px}
+.hcard-desc{font-size:0.7rem;color:var(--gray);margin-bottom:14px;line-height:1.5}
+.hcard-foot{display:flex;align-items:center;justify-content:space-between}
+.hcard-price{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:900;color:var(--ink)}
+.hcard-price span{font-size:0.68rem;font-weight:500;color:var(--gray);font-family:'Plus Jakarta Sans',sans-serif;display:block;margin-top:1px}
+.add-btn{width:36px;height:36px;background:var(--orange);border:none;border-radius:10px;color:white;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-weight:700;flex-shrink:0}
+.add-btn:hover{background:var(--orange-light);transform:scale(1.1)}
+
+/* OTHER PRODUCTS */
+.other-products{padding:0 56px 96px;background:var(--off-white)}
+.other-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .pcard{background:white;border-radius:24px;overflow:hidden;border:1px solid var(--border);transition:transform 0.3s,box-shadow 0.3s}
 .pcard:hover{transform:translateY(-8px);box-shadow:0 28px 56px rgba(249,101,0,0.12)}
 .pcard-img{height:210px;position:relative;overflow:hidden}
 .pcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s}
 .pcard:hover .pcard-img img{transform:scale(1.06)}
 .ptag{position:absolute;top:14px;left:14px;z-index:2;font-size:0.62rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px}
-.ptag-best{background:var(--orange);color:white}
 .ptag-new{background:var(--green);color:white}
 .ptag-off{background:var(--yellow);color:var(--ink)}
 .stock-badge{position:absolute;top:14px;right:14px;z-index:2;background:rgba(220,38,38,0.9);color:white;font-size:0.6rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:100px}
@@ -267,18 +301,14 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .pcard-foot{display:flex;align-items:center;justify-content:space-between}
 .pcard-price{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:900;color:var(--ink)}
 .pcard-price s{font-size:0.82rem;font-weight:400;color:var(--gray);margin-right:5px;font-family:'Plus Jakarta Sans',sans-serif}
-.add-btn{width:38px;height:38px;background:var(--orange);border:none;border-radius:12px;color:white;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-weight:700}
-.add-btn:hover{background:var(--orange-light);transform:scale(1.1)}
 
-/* PAYMENT STRIP */
 .payment-strip{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 56px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
 .pay-item{display:flex;align-items:center;gap:10px;font-size:0.82rem;font-weight:600;color:var(--gray)}
 .pay-icon{width:36px;height:36px;background:var(--orange-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
 
-/* HOW IT WORKS */
-.hiw{padding:96px 56px;background:var(--off-white)}
+.hiw{padding:96px 56px;background:white}
 .hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:52px}
-.hiw-card{background:white;border:1px solid var(--border);border-radius:22px;padding:32px 24px;text-align:center;position:relative}
+.hiw-card{background:var(--off-white);border:1px solid var(--border);border-radius:22px;padding:32px 24px;text-align:center;position:relative}
 .hiw-card::after{content:'→';position:absolute;right:-16px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--orange);font-weight:700}
 .hiw-card:last-child::after{display:none}
 .hiw-num{width:44px;height:44px;background:var(--orange-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:var(--orange);margin:0 auto 16px}
@@ -286,7 +316,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .hiw-title{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:6px}
 .hiw-desc{font-size:0.78rem;color:var(--gray);line-height:1.6}
 
-/* RIPENING TIPS */
 .ripen{padding:72px 56px;background:linear-gradient(135deg,#FFF3EB,#FFE0C0)}
 .ripen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
 .ripen-card{background:white;border:1px solid var(--border);border-radius:20px;padding:28px 22px;text-align:center}
@@ -294,7 +323,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .ripen-card h4{font-size:0.9rem;font-weight:700;color:var(--ink);margin-bottom:6px}
 .ripen-card p{font-size:0.78rem;color:var(--gray);line-height:1.6}
 
-/* STORY */
 .story{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
 .story-left{background:linear-gradient(145deg,#FF9500,#F96500);padding:72px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
 .story-left::before{content:'🥭';position:absolute;right:-20px;bottom:-30px;font-size:220px;opacity:0.1}
@@ -306,7 +334,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .story-right p{font-size:1rem;color:var(--gray);line-height:1.85;margin-bottom:18px}
 .story-right p strong{color:var(--ink);font-weight:700}
 
-/* DEVGAD VS RATNAGIRI */
 .compare{padding:96px 56px;background:var(--off-white)}
 .comp-table{width:100%;border-collapse:collapse;margin-top:48px;border-radius:20px;overflow:hidden;border:1px solid var(--border)}
 .comp-table th{background:var(--orange);color:white;padding:14px 18px;font-size:0.8rem;font-weight:700;text-align:left}
@@ -315,13 +342,9 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .comp-table tr:nth-child(even) td{background:var(--orange-pale)}
 .comp-table td:first-child{font-weight:700;color:var(--ink)}
 
-/* ZONES */
 .zones{background:var(--orange-pale);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 56px;text-align:center}
 .zones p{font-size:0.88rem;color:var(--gray);line-height:1.8}
-.ztags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px}
-.ztag{background:white;border:1px solid var(--border);border-radius:100px;padding:6px 16px;font-size:0.74rem;font-weight:600;color:var(--gray)}
 
-/* COUNTDOWN */
 .countdown{background:var(--ink);padding:48px 56px;text-align:center}
 .countdown h3{font-family:'Fraunces',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:white;margin-bottom:8px}
 .countdown h3 em{color:var(--yellow);font-style:italic}
@@ -331,7 +354,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .cd-n{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:900;color:var(--yellow);display:block;line-height:1}
 .cd-l{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;display:block}
 
-/* GIFTING */
 .gifting{padding:96px 56px;background:white}
 .gift-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:52px}
 .gift-visual{border-radius:28px;height:360px;overflow:hidden}
@@ -342,7 +364,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .gift-bullets li{display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--gray)}
 .gift-bullets li::before{content:'✓';width:22px;height:22px;background:var(--orange-pale);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--orange);font-weight:800;font-size:0.75rem;flex-shrink:0}
 
-/* COLLECTIONS */
 .collections{padding:96px 56px;background:var(--off-white)}
 .cgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:250px 250px;gap:18px;margin-top:52px}
 .ccard{border-radius:20px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s}
@@ -354,7 +375,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .c-name{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:800;color:white;display:block}
 .c-sub{font-size:0.7rem;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-top:3px;display:block}
 
-/* REVIEWS */
 .reviews{padding:96px 56px;background:white}
 .rev-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px}
 .gscore{display:flex;align-items:center;gap:12px;background:var(--orange-pale);border:1px solid rgba(249,101,0,0.2);padding:14px 22px;border-radius:100px;text-decoration:none}
@@ -371,7 +391,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .a-name{font-size:0.88rem;font-weight:700;color:var(--ink)}
 .a-meta{font-size:0.7rem;color:var(--gray);margin-top:2px}
 
-/* BLOG PREVIEW */
 .blog-preview{padding:96px 56px;background:var(--off-white)}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
 .bcard{background:white;border:1px solid var(--border);border-radius:22px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;text-decoration:none;display:block}
@@ -383,7 +402,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .bcard-body p{font-size:0.8rem;color:var(--gray);line-height:1.65;margin-bottom:14px}
 .bcard-meta{font-size:0.7rem;color:var(--orange);font-weight:700}
 
-/* FAQ */
 .faq{padding:96px 56px;background:white}
 .faq-list{margin-top:52px;display:flex;flex-direction:column;gap:14px;max-width:800px;margin-left:auto;margin-right:auto}
 .faq-item{background:var(--off-white);border:1px solid var(--border);border-radius:18px;overflow:hidden}
@@ -394,7 +412,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .faq-item.open .faq-a{max-height:300px}
 .faq-a-inner{padding:0 26px 22px;font-size:0.93rem;color:var(--gray);line-height:1.8}
 
-/* NEWSLETTER */
 .newsletter{background:linear-gradient(135deg,#FFF3EB,#FFE0C0);padding:72px 56px;text-align:center;border-top:1px solid var(--border)}
 .newsletter h3{font-family:'Fraunces',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;color:var(--ink);margin-bottom:10px}
 .newsletter h3 em{color:var(--orange);font-style:italic}
@@ -406,7 +423,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .nl-btn:hover{background:var(--orange-light)}
 .nl-note{font-size:0.72rem;color:var(--gray);margin-top:10px}
 
-/* CTA */
 .cta{background:var(--orange);padding:72px 56px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden}
 .cta::before{content:'🥭';position:absolute;right:360px;top:-30px;font-size:180px;opacity:0.1}
 .cta-h{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;color:white;line-height:1.15}
@@ -415,7 +431,6 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .btn-white{background:white;color:var(--orange);border:none;padding:15px 36px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;transition:all 0.2s;text-decoration:none;white-space:nowrap;position:relative;z-index:2}
 .btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,0.15)}
 
-/* FOOTER */
 footer{background:var(--ink);padding:72px 56px 36px}
 .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px}
 .f-desc{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.75;margin:14px 0 24px;max-width:280px}
@@ -428,7 +443,6 @@ footer{background:var(--ink);padding:72px 56px 36px}
 .flinks a:hover{color:var(--orange)}
 .fbot{display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid rgba(255,255,255,0.07);font-size:0.74rem;color:rgba(255,255,255,0.2)}
 
-/* WA FAB */
 .wa-fab{position:fixed;bottom:28px;right:28px;z-index:200;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,0.45);cursor:pointer;text-decoration:none;transition:transform 0.2s}
 .wa-fab:hover{transform:scale(1.1) translateY(-2px)}
 .wa-fab::after{content:'';position:absolute;width:100%;height:100%;border-radius:50%;background:#25D366;animation:waPulse 2s ease-out infinite;z-index:-1}
@@ -436,12 +450,10 @@ footer{background:var(--ink);padding:72px 56px 36px}
 .wa-tooltip{position:fixed;bottom:36px;right:96px;background:var(--ink);color:white;padding:8px 14px;border-radius:10px;font-size:0.75rem;font-weight:600;white-space:nowrap;z-index:199;animation:bob 3s ease-in-out infinite}
 .wa-tooltip::after{content:'';position:absolute;right:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--ink);border-right:none}
 
-/* CART DRAWER */
 #cartDrawer{display:none;position:fixed;top:0;right:0;height:100vh;width:380px;background:white;z-index:999;box-shadow:-20px 0 60px rgba(0,0,0,0.12);overflow-y:auto;padding:32px 28px;border-left:1px solid var(--border)}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
-/* RESPONSIVE */
 @media(max-width:1024px){
   .announce{font-size:0.68rem;padding:9px 12px}
   nav{padding:0 20px;top:34px;height:60px}
@@ -453,8 +465,10 @@ footer{background:var(--ink);padding:72px 56px 36px}
   .hero-right{height:320px}
   .trust{grid-template-columns:1fr 1fr}
   .trust-item{border-bottom:1px solid var(--border)}
-  .pgrid{grid-template-columns:1fr 1fr}
-  .products,.collections,.reviews,.faq,.gifting,.hiw,.compare,.blog-preview,.ripen{padding:60px 24px}
+  .hapus-section,.other-products,.collections,.reviews,.faq,.gifting,.hiw,.compare,.blog-preview,.ripen{padding:60px 24px}
+  .other-products{padding:0 24px 60px}
+  .hapus-grid{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:1fr}
   .story{grid-template-columns:1fr}
   .story-left,.story-right{padding:52px 28px}
   .cgrid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
@@ -468,8 +482,8 @@ footer{background:var(--ink);padding:72px 56px 36px}
   .hiw-grid{grid-template-columns:1fr 1fr}
   .hiw-card::after{display:none}
   .ripen-grid{grid-template-columns:1fr 1fr}
-  .countdown{padding:48px 24px}
-  .cd-boxes{flex-wrap:wrap}
+  .countdown,.size-guide{padding:48px 24px}
+  .cd-boxes,.size-cards{flex-wrap:wrap}
   .newsletter{padding:56px 24px}
   .nl-form{flex-direction:column}
   .payment-strip{gap:20px;padding:20px 24px}
@@ -533,9 +547,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
   </div>
   <div id="cartItems" style="display:flex;flex-direction:column;gap:14px;min-height:120px;"></div>
   <div id="cartFooter" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:24px;">
-    <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1rem;margin-bottom:4px;color:var(--ink);">
-      <span>Total</span><span id="cartTotal">₹0</span>
-    </div>
+    <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1rem;margin-bottom:4px;color:var(--ink);"><span>Total</span><span id="cartTotal">₹0</span></div>
     <div id="deliveryNote" style="font-size:0.72rem;font-weight:600;margin-bottom:20px;"></div>
     <div id="orderPreview" style="display:none;background:#f0fdf4;border:1.5px solid #25D366;border-radius:14px;padding:14px;margin-bottom:16px;">
       <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#1A6B3C;margin-bottom:8px;">📋 Your order summary:</div>
@@ -579,8 +591,8 @@ footer{background:var(--ink);padding:72px 56px 36px}
 
 <!-- TICKER -->
 <div class="ticker"><div class="ticker-track">
-  <span class="tick-item">Free Delivery Above ₹999</span><span class="tick-item">100% Authentic Devgad Hapus</span><span class="tick-item">Payari Mangoes Also Available</span><span class="tick-item">Handpicked at Peak Ripeness</span><span class="tick-item">No Calcium Carbide · No Cold Storage</span><span class="tick-item">WhatsApp Order Mumbai · Thane · Pune</span>
-  <span class="tick-item">Free Delivery Above ₹999</span><span class="tick-item">100% Authentic Devgad Hapus</span><span class="tick-item">Payari Mangoes Also Available</span><span class="tick-item">Handpicked at Peak Ripeness</span><span class="tick-item">No Calcium Carbide · No Cold Storage</span><span class="tick-item">WhatsApp Order Mumbai · Thane · Pune</span>
+  <span class="tick-item">Free Delivery Above ₹999</span><span class="tick-item">100% Authentic Devgad Hapus</span><span class="tick-item">5 Grades — Pick Your Size</span><span class="tick-item">Payari Mangoes Also Available</span><span class="tick-item">No Calcium Carbide · No Cold Storage</span><span class="tick-item">WhatsApp Order Mumbai · Thane · Pune</span>
+  <span class="tick-item">Free Delivery Above ₹999</span><span class="tick-item">100% Authentic Devgad Hapus</span><span class="tick-item">5 Grades — Pick Your Size</span><span class="tick-item">Payari Mangoes Also Available</span><span class="tick-item">No Calcium Carbide · No Cold Storage</span><span class="tick-item">WhatsApp Order Mumbai · Thane · Pune</span>
 </div></div>
 
 <!-- TRUST -->
@@ -591,28 +603,149 @@ footer{background:var(--ink);padding:72px 56px 36px}
   <div class="trust-item"><div class="ti-icon">📦</div><div><div class="ti-title">No Cold Storage</div><div class="ti-desc">Farm to door in under 48 hours</div></div></div>
 </div>
 
-<!-- PRODUCTS -->
-<section class="products" id="shop">
-  <div class="prod-hdr">
-    <div><div class="sec-tag">Fresh This Season</div><h2 class="sec-h">Choose Your<br><em>Perfect Box</em></h2></div>
-    <a href="#" onclick="waOpen('viewall');return false;" class="see-all">View All</a>
+<!-- SIZE GUIDE STRIP -->
+<div class="size-guide" id="shop">
+  <h3>🥭 Devgad Hapus — <em>Choose Your Grade</em></h3>
+  <p>All grades are GI-certified Devgad Alphonso. Bigger grade = larger mangoes = higher price per dozen.</p>
+  <div class="size-cards">
+    <div class="size-card" onclick="waOpen('hapus1')">
+      <span class="grade">G1</span>
+      <span class="wt">300–325g each</span>
+      <span class="pr">₹1,500</span>
+      <span class="pr-lbl">per dozen</span>
+    </div>
+    <div class="size-card" onclick="waOpen('hapus2')">
+      <span class="grade">G2</span>
+      <span class="wt">275–300g each</span>
+      <span class="pr">₹1,400</span>
+      <span class="pr-lbl">per dozen</span>
+    </div>
+    <div class="size-card" onclick="waOpen('hapus3')" style="border-color:var(--orange);background:rgba(249,101,0,0.15)">
+      <span class="grade" style="color:#FFB800">G3 ⭐</span>
+      <span class="wt">250–275g each</span>
+      <span class="pr">₹1,300</span>
+      <span class="pr-lbl">Most Popular</span>
+    </div>
+    <div class="size-card" onclick="waOpen('hapus4')">
+      <span class="grade">G4</span>
+      <span class="wt">225–250g each</span>
+      <span class="pr">₹1,200</span>
+      <span class="pr-lbl">per dozen</span>
+    </div>
+    <div class="size-card" onclick="waOpen('hapus5')">
+      <span class="grade">G5</span>
+      <span class="wt">200–225g each</span>
+      <span class="pr">₹1,100</span>
+      <span class="pr-lbl">per dozen</span>
+    </div>
   </div>
-  <div class="pgrid">
-    <article class="pcard">
-      <div class="pcard-img">
-        <span class="ptag ptag-best">Best Seller</span>
-        <span class="stock-badge">🔥 Selling Fast</span>
-        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Hapus Classic Box — 12 Devgad Alphonso Mangoes">
+</div>
+
+<!-- HAPUS 5-GRADE PRODUCT CARDS -->
+<section class="hapus-section">
+  <div class="hapus-intro">
+    <div class="sec-tag">Devgad Hapus Alphonso</div>
+    <h2 class="sec-h">Pick Your <em>Size & Grade</em></h2>
+    <p style="color:var(--gray);font-size:0.95rem;margin-top:10px;max-width:600px;">Same farm, same GI-certified Devgad quality — only the size differs. Bigger mangoes = richer pulp per fruit. All naturally ripened, no carbide, no cold storage.</p>
+  </div>
+  <div class="hapus-grid">
+
+    <!-- GRADE 1 -->
+    <article class="hcard">
+      <div class="hcard-img">
+        <span class="grade-badge">Grade 1</span>
+        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 1 Jumbo 300-325g">
       </div>
-      <div class="pcard-body">
-        <h3 class="pcard-name">Hapus Classic</h3>
-        <div class="pcard-wt">12 Devgad Alphonso mangoes · 200–220g each · GI Certified</div>
-        <div class="pcard-foot">
-          <div class="pcard-price">₹1,499</div>
-          <button class="add-btn" onclick="addToCart('Hapus Classic',1499);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1200);">+</button>
+      <div class="hcard-body">
+        <div class="hcard-name">Jumbo Hapus</div>
+        <div class="hcard-wt">300–325g each · 12 mangoes</div>
+        <div class="hcard-desc">Biggest size available. Extra-rich pulp, exceptional aroma. Ideal for gifting.</div>
+        <div class="hcard-foot">
+          <div class="hcard-price">₹1,500<span>per dozen</span></div>
+          <button class="add-btn" onclick="addToCart('Hapus Grade 1 Jumbo (300-325g)',1500);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1200);">+</button>
         </div>
       </div>
     </article>
+
+    <!-- GRADE 2 -->
+    <article class="hcard">
+      <div class="hcard-img">
+        <span class="grade-badge">Grade 2</span>
+        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 2 Super Large 275-300g">
+      </div>
+      <div class="hcard-body">
+        <div class="hcard-name">Super Large Hapus</div>
+        <div class="hcard-wt">275–300g each · 12 mangoes</div>
+        <div class="hcard-desc">Premium size, full flavour. Great choice for families who love large mangoes.</div>
+        <div class="hcard-foot">
+          <div class="hcard-price">₹1,400<span>per dozen</span></div>
+          <button class="add-btn" onclick="addToCart('Hapus Grade 2 Super Large (275-300g)',1400);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1200);">+</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- GRADE 3 — MOST POPULAR -->
+    <article class="hcard" style="border-color:var(--orange);box-shadow:0 0 0 2px rgba(249,101,0,0.15)">
+      <div class="hcard-img">
+        <span class="grade-badge">Grade 3</span>
+        <span class="popular-badge">⭐ Most Popular</span>
+        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 3 Large 250-275g">
+      </div>
+      <div class="hcard-body">
+        <div class="hcard-name">Large Hapus</div>
+        <div class="hcard-wt">250–275g each · 12 mangoes</div>
+        <div class="hcard-desc">Best value and most ordered size. Perfect balance of size, taste and price.</div>
+        <div class="hcard-foot">
+          <div class="hcard-price">₹1,300<span>per dozen</span></div>
+          <button class="add-btn" onclick="addToCart('Hapus Grade 3 Large (250-275g)',1300);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1200);">+</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- GRADE 4 -->
+    <article class="hcard">
+      <div class="hcard-img">
+        <span class="grade-badge">Grade 4</span>
+        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 4 Medium 225-250g">
+      </div>
+      <div class="hcard-body">
+        <div class="hcard-name">Medium Hapus</div>
+        <div class="hcard-wt">225–250g each · 12 mangoes</div>
+        <div class="hcard-desc">Great everyday choice. Same authentic Devgad flavour at a lower price.</div>
+        <div class="hcard-foot">
+          <div class="hcard-price">₹1,200<span>per dozen</span></div>
+          <button class="add-btn" onclick="addToCart('Hapus Grade 4 Medium (225-250g)',1200);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1200);">+</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- GRADE 5 -->
+    <article class="hcard">
+      <div class="hcard-img">
+        <span class="grade-badge">Grade 5</span>
+        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 5 Standard 200-225g">
+      </div>
+      <div class="hcard-body">
+        <div class="hcard-name">Standard Hapus</div>
+        <div class="hcard-wt">200–225g each · 12 mangoes</div>
+        <div class="hcard-desc">Most affordable grade. Perfect for Aamras — same taste, smaller size.</div>
+        <div class="hcard-foot">
+          <div class="hcard-price">₹1,100<span>per dozen</span></div>
+          <button class="add-btn" onclick="addToCart('Hapus Grade 5 Standard (200-225g)',1100);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1200);">+</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- OTHER PRODUCTS -->
+<section class="other-products">
+  <div class="other-hdr">
+    <div><div class="sec-tag">Also Available</div><h2 class="sec-h">More from <em>Our Farm</em></h2></div>
+    <a href="#" onclick="waOpen('viewall');return false;" class="see-all">View All</a>
+  </div>
+  <div class="pgrid">
     <article class="pcard">
       <div class="pcard-img">
         <span class="ptag ptag-new">Payari</span>
@@ -669,7 +802,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <section class="hiw">
   <div style="text-align:center"><div class="sec-tag" style="justify-content:center">Simple & Easy</div><h2 class="sec-h">How to <em>Order</em></h2></div>
   <div class="hiw-grid">
-    <div class="hiw-card"><span class="hiw-icon">🛒</span><div class="hiw-num">1</div><div class="hiw-title">Pick Your Box</div><div class="hiw-desc">Choose Hapus, Payari, Aamras or a Gift Hamper from our shop above</div></div>
+    <div class="hiw-card"><span class="hiw-icon">🛒</span><div class="hiw-num">1</div><div class="hiw-title">Pick Your Grade</div><div class="hiw-desc">Choose your preferred size — Grade 1 (Jumbo) to Grade 5 (Standard)</div></div>
     <div class="hiw-card"><span class="hiw-icon">💬</span><div class="hiw-num">2</div><div class="hiw-title">Order on WhatsApp</div><div class="hiw-desc">Add to cart and tap "Order on WhatsApp" — your order is pre-filled</div></div>
     <div class="hiw-card"><span class="hiw-icon">✅</span><div class="hiw-num">3</div><div class="hiw-title">We Confirm</div><div class="hiw-desc">We confirm availability, delivery address and payment with you</div></div>
     <div class="hiw-card"><span class="hiw-icon">🚚</span><div class="hiw-num">4</div><div class="hiw-title">Fresh Delivery</div><div class="hiw-desc">Packed fresh the same morning, delivered within 48 hours</div></div>
@@ -697,7 +830,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <div class="story-stats">
       <div class="sstbox"><span class="n">30+</span><span class="l">Years Farming</span></div>
       <div class="sstbox"><span class="n">GI</span><span class="l">Certified Devgad</span></div>
-      <div class="sstbox"><span class="n">2</span><span class="l">Mango Varieties</span></div>
+      <div class="sstbox"><span class="n">5</span><span class="l">Size Grades</span></div>
       <div class="sstbox"><span class="n">0</span><span class="l">Cold Storage Days</span></div>
     </div>
   </div>
@@ -737,7 +870,6 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <!-- DELIVERY ZONES -->
 <div class="zones">
   <p><strong>Delivering farm-fresh Devgad Hapus & Payari mangoes</strong> across Mumbai, Thane, Navi Mumbai, Pune and beyond — in under 48 hours.</p>
-
 </div>
 
 <!-- COUNTDOWN -->
@@ -762,7 +894,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
       <p>Perfect for <strong>corporate gifting, family occasions, weddings, and festive seasons</strong>. Beautifully packed and delivered fresh within 48 hours.</p>
       <ul class="gift-bullets">
         <li>Premium packaging — gifting-ready, no extra wrapping needed</li>
-        <li>Both Hapus Alphonso & Payari available in gift boxes</li>
+        <li>Choose any grade from G1 to G5 for your hamper</li>
         <li>Bulk & corporate gifting orders welcome</li>
         <li>Delivery across Mumbai, Thane, Navi Mumbai & Pune</li>
         <li>Order via WhatsApp — quick, easy, personalised</li>
@@ -779,7 +911,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <a href="#" onclick="waOpen('viewall');return false;" class="see-all">View All</a>
   </div>
   <div class="cgrid">
-    <div class="ccard" onclick="waOpen('hapus')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898676/product-jpeg-1000x1000_ydydob.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Alphonso</span><span class="c-sub">GI-certified Devgad · In season now</span></div></div>
+    <div class="ccard" onclick="waOpen('hapus3')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898676/product-jpeg-1000x1000_ydydob.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Alphonso</span><span class="c-sub">5 grades · GI-certified Devgad · In season now</span></div></div>
     <div class="ccard" onclick="waOpen('payari')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898827/20210505_170705_04-72PCS-PAYRI-FULL-WOOD-BOX-PETI-PAYRI-scaled_q7famh.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Payari</span><span class="c-sub">Small, sweet & rare Devgad variety</span></div></div>
     <div class="ccard" onclick="waOpen('aamras')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898947/OIP_2_pm9ugi.webp') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Aamras Pulp</span><span class="c-sub">Ready to eat · No preservatives</span></div></div>
     <div class="ccard" onclick="waOpen('gifting')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846886/60733749-c589-46eb-a41d-7f1ee3471366_rciuzx.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Gift Hampers</span><span class="c-sub">Corporate & family gifting Mumbai</span></div></div>
@@ -796,8 +928,8 @@ footer{background:var(--ink);padding:72px 56px 36px}
     </a>
   </div>
   <div class="rgrid">
-    <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-text">"Ordered both Hapus and Payari to compare — honestly the Payari surprised me. Smaller but so fragrant and sweet. Will keep ordering both every week this season."</p><div class="rcard-author"><div class="ava">PA</div><div><div class="a-name">Pratik Alwe</div><div class="a-meta">Andheri, Mumbai · Verified Order</div></div></div></div>
-    <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-text">"Sent a Duo Hamper to my in-laws — they were thrilled. The packaging was beautiful and the Devgad Hapus arrived perfectly ripe. Our go-to every season."</p><div class="rcard-author"><div class="ava">SV</div><div><div class="a-name">Sarvesh Vantekar</div><div class="a-meta">Thane · Verified Order</div></div></div></div>
+    <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-text">"Ordered Grade 3 and Grade 1 to compare — Grade 1 Jumbo is absolutely incredible. The size and flavour are unmatched. Will order Grade 1 every week this season."</p><div class="rcard-author"><div class="ava">PA</div><div><div class="a-name">Pratik Alwe</div><div class="a-meta">Andheri, Mumbai · Verified Order</div></div></div></div>
+    <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-text">"Sent a Duo Hamper with Grade 2 Hapus to my in-laws — they were thrilled. The packaging was beautiful and the Devgad Hapus arrived perfectly ripe. Our go-to every season."</p><div class="rcard-author"><div class="ava">SV</div><div><div class="a-name">Sarvesh Vantekar</div><div class="a-meta">Thane · Verified Order</div></div></div></div>
     <div class="rcard"><div class="rcard-stars">★★★★★</div><p class="rcard-text">"These taste exactly like the mangoes I ate as a child. No artificial smell, no hard texture — pure, natural Alphonso sweetness. Absolutely the real Devgad deal."</p><div class="rcard-author"><div class="ava">SS</div><div><div class="a-name">Swapnil Sawant</div><div class="a-meta">Pune · Verified Order</div></div></div></div>
   </div>
 </section>
@@ -831,15 +963,16 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <h2 class="sec-h">Everything You Want<br><em>to Know</em></h2>
   </div>
   <div class="faq-list">
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Grade 1, 2, 3, 4 and 5?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">All grades are the same GI-certified Devgad Hapus Alphonso from our farm. The only difference is the size of each mango. Grade 1 (300–325g) is the largest and Grade 5 (200–225g) is the smallest. Taste and quality are equally authentic across all grades. Bigger mangoes have more pulp per fruit and are preferred for gifting.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which grade should I order?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Grade 3 (250–275g, ₹1,300) is our most popular and best value choice. If you want to gift or impress, choose Grade 1 or 2. If you're making Aamras at home, Grade 5 is perfect — same taste at the lowest price.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are these mangoes really from Devgad?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes. We source exclusively from GI-certified orchards in Devgad, Sindhudurg district, Maharashtra. No mixing with Ratnagiri or other origins.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Devgad and Ratnagiri Alphonso?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Both are GI-tagged Konkan Alphonso mangoes. Devgad Hapus is regarded for deeper golden colour, richer saffron aroma and slightly firmer flesh. We source exclusively from Devgad. Read our full comparison at the blog.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you use calcium carbide for ripening?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Never. Our Hapus and Payari mangoes are naturally tree-ripened. We never use calcium carbide or any artificial ripening agents.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Hapus and Payari mangoes?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Hapus (Alphonso) is larger with buttery texture and intense flavour. Payari is smaller, highly fragrant and sweeter. Many customers order the Duo Hamper to enjoy both.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How fast is delivery in Mumbai?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We deliver within 48 hours across Mumbai, Thane, and Navi Mumbai. Mangoes are packed fresh the morning they ship — zero cold storage.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is there free delivery?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes! Orders above ₹999 qualify for free delivery. Order via WhatsApp at +91 94050 74998.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We accept UPI (Google Pay, PhonePe, Paytm), bank transfer (NEFT/IMPS), and cash on delivery within Mumbai. Payment details are confirmed over WhatsApp after you place your order.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you deliver to Pune and Nashik?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes, we deliver to Pune and Nashik. Contact us on WhatsApp at +91 94050 74998 for charges and details.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We accept UPI (Google Pay, PhonePe, Paytm) and bank transfer (NEFT/IMPS). Payment details are confirmed over WhatsApp after you place your order.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">My mangoes arrived raw. What do I do?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">This is normal! Devgad Hapus is sent slightly raw to protect it during transit. Keep them in the box at room temperature for 3–5 days. Do NOT refrigerate unripe mangoes. See our ripening guide on this page for step-by-step instructions.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you deliver to Pune and Nashik?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes, we deliver to Pune and Nashik. Contact us on WhatsApp at +91 94050 74998 for charges and details.</div></div></div>
   </div>
 </section>
 
@@ -858,7 +991,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <div class="cta">
   <div>
     <div class="cta-h">Season ends soon.<br><em>Order before it's over.</em></div>
-    <div class="cta-sub">Limited stock of authentic Devgad Hapus & Payari — available now.</div>
+    <div class="cta-sub">5 grades available — from ₹1,100 to ₹1,500 per dozen. Limited stock.</div>
   </div>
   <a href="#" onclick="waOpen('cta');return false;" class="btn-white">Order on WhatsApp →</a>
 </div>
@@ -871,31 +1004,33 @@ footer{background:var(--ink);padding:72px 56px 36px}
         <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846881/6db67300-c5b5-439c-8a7a-f404fd7b7783_g6xnzr.jpg" alt="Hapus Devgad" class="logo-mark">
         <span class="brand-name" style="color:white;">Ha<span>pus</span></span>
       </a>
-      <p class="f-desc">Buy authentic Devgad Hapus Alphonso & Payari mangoes online — GI-certified, no calcium carbide, farm-direct delivery across Mumbai, Thane, Navi Mumbai and Pune.</p>
+      <p class="f-desc">Buy authentic Devgad Hapus Alphonso & Payari mangoes online — GI-certified, 5 size grades from ₹1,100–₹1,500/dozen, no calcium carbide, farm-direct delivery across Mumbai.</p>
       <div class="fsocs">
         <a class="fsoc" href="https://www.instagram.com/" target="_blank" aria-label="Instagram">IG</a>
         <a class="fsoc" href="https://www.facebook.com/" target="_blank" aria-label="Facebook">FB</a>
         <a class="fsoc" href="#" onclick="waOpen('fab');return false;" aria-label="WhatsApp">WA</a>
       </div>
     </div>
-    <div class="fcol"><h5>Shop</h5><ul class="flinks">
-      <li><a href="#" onclick="waOpen('hapus');return false;">Hapus Alphonso Classic</a></li>
+    <div class="fcol"><h5>Shop Hapus</h5><ul class="flinks">
+      <li><a href="#" onclick="waOpen('hapus1');return false;">Grade 1 — Jumbo (₹1,500)</a></li>
+      <li><a href="#" onclick="waOpen('hapus2');return false;">Grade 2 — Super Large (₹1,400)</a></li>
+      <li><a href="#" onclick="waOpen('hapus3');return false;">Grade 3 — Large (₹1,300) ⭐</a></li>
+      <li><a href="#" onclick="waOpen('hapus4');return false;">Grade 4 — Medium (₹1,200)</a></li>
+      <li><a href="#" onclick="waOpen('hapus5');return false;">Grade 5 — Standard (₹1,100)</a></li>
+    </ul></div>
+    <div class="fcol"><h5>More Products</h5><ul class="flinks">
       <li><a href="#" onclick="waOpen('payari');return false;">Payari Mango Box</a></li>
       <li><a href="#" onclick="waOpen('gifting');return false;">Duo Gift Hamper</a></li>
       <li><a href="#" onclick="waOpen('aamras');return false;">Hapus Aamras Pulp</a></li>
-    </ul></div>
-    <div class="fcol"><h5>Company</h5><ul class="flinks">
       <li><a href="#story">Our Devgad Farm</a></li>
-      <li><a href="#gifting">Corporate Gifting</a></li>
-      <li><a href="#reviews">Customer Reviews</a></li>
       <li><a href="blog.html">Mango Blog</a></li>
-      <li><a href="#faq">FAQ</a></li>
     </ul></div>
     <div class="fcol"><h5>Contact</h5><ul class="flinks">
       <li><a href="tel:+919405074998">+91 94050 74998</a></li>
       <li><a href="#">Andheri(W), Mumbai – 400092</a></li>
       <li><a href="#" onclick="waOpen('fab');return false;">WhatsApp Order 💬</a></li>
       <li><a href="https://g.co/kgs/zveHhXM" target="_blank">Google Reviews ★ 4.9</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul></div>
   </div>
   <div class="fbot">
@@ -915,12 +1050,10 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <script>
 updateCountdown();
 setInterval(updateCountdown,1000);
-
 window.onscroll=function(){
   var nav=document.getElementById('topnav');
   if(nav) nav.style.boxShadow=window.scrollY>40?'0 4px 24px rgba(0,0,0,0.07)':'none';
 };
-
 window.addEventListener('load',function(){
   var obs=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
@@ -931,7 +1064,7 @@ window.addEventListener('load',function(){
       }
     });
   },{threshold:0.1});
-  var els=document.querySelectorAll('.pcard,.rcard,.ccard,.sstbox,.trust-item,.hiw-card,.cd-box,.ripen-card,.bcard');
+  var els=document.querySelectorAll('.hcard,.pcard,.rcard,.ccard,.sstbox,.trust-item,.hiw-card,.cd-box,.ripen-card,.bcard,.size-card');
   els.forEach(function(c){c.style.opacity='0';obs.observe(c);});
 });
 </script>
