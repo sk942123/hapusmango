@@ -94,7 +94,7 @@ function buildMsg(){
     lines+='• '+cart[i].name+' x'+cart[i].qty+' = Rs.'+cart[i].price*cart[i].qty+'\n';
     total+=cart[i].price*cart[i].qty;
   }
-  var del=total>=1999?'FREE Delivery 🎉':'Delivery charges: ₹100';
+  var del=total>=4999?'FREE Delivery 🎉':'Delivery charges: ₹100';
   return 'Hi! 👋 I want to place an order from Hapus Devgad:\n\n🛒 My Order:\n'+lines+'\n💰 Total: Rs.'+total+'\n📦 '+del+'\n\nPlease confirm availability, delivery address & payment.\n\nThank you! 🥭';
 }
 
@@ -126,8 +126,8 @@ function renderCart(){
   con.innerHTML=html;
   document.getElementById('cartTotal').textContent='₹'+total;
   var note=document.getElementById('deliveryNote');
-  if(total>=1999){note.style.color='#1A6B3C';note.textContent='🎉 You qualify for FREE delivery!';}
-  else{note.style.color='#F96500';note.textContent='₹100 delivery charge applies (Free above ₹1,999) 🚚';}
+  if(total>=4999){note.style.color='#1A6B3C';note.textContent='🎉 You qualify for FREE delivery!';}
+  else{note.style.color='#F96500';note.textContent='₹100 delivery charge applies (Free above ₹4,999) 🚚';}
   document.getElementById('previewText').textContent=buildMsg();
   document.getElementById('orderPreview').style.display='block';
 }
@@ -654,7 +654,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <body>
 
 <!-- ANNOUNCE -->
-<div class="announce">🌿 Season 2026 is here! <span>₹100 delivery · Free above ₹1,999</span> · Limited stock — order now 🥭</div>
+<div class="announce">🌿 Season 2026 is here! <span>₹100 delivery · Free above ₹4,999</span> · Limited stock — order now 🥭</div>
 
 <!-- NAV -->
 <nav id="topnav">
@@ -953,7 +953,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <div class="payment-strip">
   <div class="pay-item"><div class="pay-icon">💳</div>UPI / Google Pay / PhonePe</div>
   <div class="pay-item"><div class="pay-icon">🏦</div>Bank Transfer (NEFT/IMPS)</div>
-  <div class="pay-item"><div class="pay-icon">🚚</div>₹100 Delivery · Free above ₹1,999</div>
+  <div class="pay-item"><div class="pay-icon">🚚</div>₹100 Delivery · Free above ₹4,999</div>
 </div>
 
 <!-- HOW IT WORKS -->
@@ -1149,7 +1149,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <div class="cta">
   <div>
     <div class="cta-h">Season ends soon.<br><em>Order before it's over.</em></div>
-    <div class="cta-sub">5 grades from ₹1,099–₹1,499 per dozen · ₹100 delivery · Free above ₹1,999</div>
+    <div class="cta-sub">5 grades from ₹1,099–₹1,499 per dozen · ₹100 delivery · Free above ₹4,999</div>
   </div>
   <a href="#" onclick="waOpen('cta');return false;" class="btn-white">Order on WhatsApp →</a>
 </div>
