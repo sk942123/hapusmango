@@ -145,8 +145,7 @@ function buildMsg(){
     lines+='• '+cart[i].name+' x'+cart[i].qty+' = Rs.'+cart[i].price*cart[i].qty+'\n';
     total+=cart[i].price*cart[i].qty;
   }
-  var del='Delivery charges applicable. Extra charges applicable for doorstep delivery 🚚';
-  return 'Hi! 👋 I want to place an order from Hapus Devgad:\n\n🛒 My Order:\n'+lines+'\n💰 Total: Rs.'+total+'\n📦 '+del+'\n\nPlease confirm availability, delivery address & payment.\n\nThank you! 🥭';
+  return 'Hi! 👋 I want to place an order from Hapus Devgad:\n\n🛒 My Order:\n'+lines+'\n💰 Total: Rs.'+total+'\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nPlease confirm availability, delivery address & payment.\n\nThank you! 🥭';
 }
 
 function sendOrder(){
