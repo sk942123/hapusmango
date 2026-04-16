@@ -11,14 +11,6 @@
 
   gtag('config', 'AW-18077876495');
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18077876495"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18077876495');
-</script>
 
 <script>
 function gtag_report_conversion(url) {
@@ -35,7 +27,42 @@ function gtag_report_conversion(url) {
   });
   return false;
 }
+
+(function () {  
+  // Updated Google Ads send_to values for your specific account
+  var SEND_TO_CONVERSION = 'AW-18077876495/IdW4CImarp0cEI-CmqxD'; 
+
+  function fire(sendTo, url, label){    
+    console.log(">>> Firing conversion for:", label, sendTo);    
+    var done=false;    
+    var go=function(){ if(done) return; done=true; if(url) window.location = url; };    
+    setTimeout(go, 500); 
+    gtag('event','conversion',{ send_to: sendTo, event_callback: go });    
+    return false;  
+  }
+
+  document.addEventListener('click', function(e){    
+    var a = e.target.closest('a'); if(!a) return;    
+    var href = (a.getAttribute('href') || '').trim();
+
+    // Track WhatsApp clicks (Matches your current site link)
+    if (href.includes('wa.me/919405074998')) {      
+      e.preventDefault();      
+      return fire(SEND_TO_CONVERSION, href, "WhatsApp Click");    
+    }
+
+    // Track Phone Call clicks (Matches your phone number: 9405074998)
+    if (href.toLowerCase().startsWith('tel:')) {      
+      var dialed = href.replace(/[^\d]/g,''); 
+      if (dialed.endsWith('9405074998')) {  
+        e.preventDefault();        
+        return fire(SEND_TO_CONVERSION, href, "Phone Click");      
+      }    
+    }  
+  }, true);
+})();
 </script>
+  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ✅ Optimised Title (under 60 chars) -->
