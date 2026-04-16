@@ -28,35 +28,39 @@ function gtag_report_conversion(url) {
   return false;
 }
 
+// Global variable for the conversion ID
+var GOOGLE_CONVERSION_ID = 'AW-18077876495/IdW4CImarp0cEI-CmqxD';
+
+function fireGadsConversion(label, url) {
+  console.log(">>> Firing conversion for:", label);
+  gtag('event', 'conversion', {
+    'send_to': GOOGLE_CONVERSION_ID,
+    'event_callback': function() {
+      if (url) window.open(url, '_blank');
+    }
+  });
+}
+
+// Update your waOpen function to trigger the conversion
+function waOpen(type){
+  var msg = MSGS[type] || MSGS.fab;
+  var waUrl = 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+  
+  // Fire the conversion and then open the link
+  fireGadsConversion("WhatsApp Click: " + type, waUrl);
+}
+
+// Keep the event listener for any other manual links (like phone numbers)
 (function () {  
-  // Updated Google Ads send_to values for your specific account
-  var SEND_TO_CONVERSION = 'AW-18077876495/IdW4CImarp0cEI-CmqxD'; 
-
-  function fire(sendTo, url, label){    
-    console.log(">>> Firing conversion for:", label, sendTo);    
-    var done=false;    
-    var go=function(){ if(done) return; done=true; if(url) window.location = url; };    
-    setTimeout(go, 500); 
-    gtag('event','conversion',{ send_to: sendTo, event_callback: go });    
-    return false;  
-  }
-
   document.addEventListener('click', function(e){    
     var a = e.target.closest('a'); if(!a) return;    
     var href = (a.getAttribute('href') || '').trim();
 
-    // Track WhatsApp clicks (Matches your current site link)
-    if (href.includes('wa.me/919405074998')) {      
-      e.preventDefault();      
-      return fire(SEND_TO_CONVERSION, href, "WhatsApp Click");    
-    }
-
-    // Track Phone Call clicks (Matches your phone number: 9405074998)
     if (href.toLowerCase().startsWith('tel:')) {      
       var dialed = href.replace(/[^\d]/g,''); 
       if (dialed.endsWith('9405074998')) {  
         e.preventDefault();        
-        return fire(SEND_TO_CONVERSION, href, "Phone Click");      
+        fireGadsConversion("Phone Click", href);      
       }    
     }  
   }, true);
@@ -294,7 +298,9 @@ function buildMsg(){
 
 function sendOrder(){
   if(!cart.length){alert('Cart is empty! Add items first. 🥭');return;}
-  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(buildMsg()),'_blank');
+  var finalUrl = 'https://wa.me/'+WA+'?text='+encodeURIComponent(buildMsg());
+  // Add this line to track cart orders
+  fireGadsConversion("Cart Order Sent", finalUrl);
 }
 
 function renderCart(){
