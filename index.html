@@ -41,13 +41,12 @@ function fireGadsConversion(label, url) {
   });
 }
 
-// Update your waOpen function to trigger the conversion
 function waOpen(type){
   var msg = MSGS[type] || MSGS.fab;
   var waUrl = 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
   
-  // Fire the conversion and then open the link
-  fireGadsConversion("WhatsApp Click: " + type, waUrl);
+  // Call the tracking function before opening WhatsApp
+  gtag_report_conversion(waUrl);
 }
 
 // Keep the event listener for any other manual links (like phone numbers)
@@ -296,11 +295,13 @@ function buildMsg(){
   return 'Hi! 👋 I want to place an order from Hapus Devgad:\n\n🛒 My Order:\n'+lines+'\n💰 Total: Rs.'+total+'\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nPlease confirm availability, delivery address & payment.\n\nThank you! 🥭';
 }
 
+// Step 2: Also update the sendOrder function for your cart (around line 185)
 function sendOrder(){
   if(!cart.length){alert('Cart is empty! Add items first. 🥭');return;}
   var finalUrl = 'https://wa.me/'+WA+'?text='+encodeURIComponent(buildMsg());
-  // Add this line to track cart orders
-  fireGadsConversion("Cart Order Sent", finalUrl);
+  
+  // Track the final order click as a conversion
+  gtag_report_conversion(finalUrl);
 }
 
 function renderCart(){
