@@ -41,15 +41,16 @@ function fireGadsConversion(label, url) {
   });
 }
 
+// Updated waOpen to use your specific wa.link
 function waOpen(type){
-  var msg = MSGS[type] || MSGS.fab;
-  var waUrl = 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+  // Use your requested wa.link logic here
+  var waUrl = 'https://wa.link/e8oc1j'; 
   
-  // Call the tracking function before opening WhatsApp
+  // Track conversion then redirect
   gtag_report_conversion(waUrl);
 }
 
-// Keep the event listener for any other manual links (like phone numbers)
+// Listener for manual links (like phone numbers)
 (function () {  
   document.addEventListener('click', function(e){    
     var a = e.target.closest('a'); if(!a) return;    
@@ -61,7 +62,13 @@ function waOpen(type){
         e.preventDefault();        
         fireGadsConversion("Phone Click", href);      
       }    
-    }  
+    }
+    
+    // Auto-track any other manual wa.link clicks
+    if (href.includes('wa.link/e8oc1j')) {
+        e.preventDefault();
+        gtag_report_conversion(href);
+    }
   }, true);
 })();
 </script>
