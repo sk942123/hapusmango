@@ -229,6 +229,15 @@ function waOpen(type){
   window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
 }
 
+function orderWhatsApp(){
+  if(!cart.length){
+    alert('Please add mangoes to your cart before placing your WhatsApp order.');
+    toggleCart();
+    return;
+  }
+  sendOrder();
+}
+
 function toggleCart(){
   var d=document.getElementById('cartDrawer');
   var o=document.getElementById('cartOverlay');
@@ -467,6 +476,13 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .hcard:hover .hcard-img img{transform:scale(1.07)}
 .grade-badge{position:absolute;top:12px;left:12px;z-index:2;background:var(--orange);color:white;font-family:'Fraunces',serif;font-size:0.9rem;font-weight:900;padding:4px 12px;border-radius:100px}
 .popular-badge{position:absolute;top:12px;right:12px;z-index:2;background:var(--green);color:white;font-size:0.58rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 9px;border-radius:100px}
+.discount-badge{position:absolute;top:12px;right:12px;z-index:2;background:#FF6B35;color:white;font-size:0.62rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:100px}
+.value-section{padding:56px 56px 32px;background:#FFF9F5}
+.value-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1140px;margin:0 auto}
+.value-card{background:white;border:1px solid rgba(249,101,0,0.16);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:16px;min-height:190px}
+.value-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(249,101,0,0.08);font-size:1.5rem}
+.value-card h3{font-size:1.05rem;font-weight:800;color:var(--ink);line-height:1.2}
+.value-card p{color:var(--gray);font-size:0.92rem;line-height:1.6}
 .hcard-body{padding:18px}
 .hcard-name{font-family:'Fraunces',serif;font-size:0.95rem;font-weight:800;color:var(--ink);margin-bottom:2px}
 .hcard-wt{font-size:0.7rem;color:var(--gray);margin-bottom:4px}
@@ -478,9 +494,9 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .hcard-rating{font-size:0.65rem;color:var(--orange);font-weight:700;margin-bottom:10px}
 .add-btn{width:36px;height:36px;background:var(--orange);border:none;border-radius:10px;color:white;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-weight:700;flex-shrink:0}
 .add-btn:hover{background:var(--orange-light);transform:scale(1.1)}
-.qty-badge{display:none;align-items:center;gap:0;background:var(--orange);border-radius:10px;overflow:hidden;flex-shrink:0}
-.qty-badge button{width:30px;height:36px;background:none;border:none;color:white;font-size:1.1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s}
-.qty-badge button:hover{background:rgba(0,0,0,0.15)}
+ qty-badge{display:none;align-items:center;gap:0;background:var(--orange);border-radius:10px;overflow:hidden;flex-shrink:0}
+ qty-badge button{width:30px;height:36px;background:none;border:none;color:white;font-size:1.1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s}
+ qty-badge button:hover{background:rgba(0,0,0,0.15)}
 .qbadge-n{font-family:'Fraunces',serif;font-size:1rem;font-weight:900;color:white;min-width:24px;text-align:center}
 
 .other-products{padding:0 56px 96px;background:var(--off-white)}
@@ -580,7 +596,7 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 
 .collections{padding:96px 56px;background:var(--off-white)}
 .cgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:250px 250px;gap:18px;margin-top:52px}
-.ccard{border-radius:20px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s}
+.ccard{border-radius:20px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s}
 .ccard:hover{transform:scale(1.02)}
 .ccard:first-child{grid-row:span 2}
 .cbg{position:absolute;inset:0;background-size:cover!important;background-position:center!important;transition:transform 0.5s}
@@ -912,7 +928,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-565CJ63B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ANNOUNCE -->
-<div class="announce">🌿 Season 2026 is here! <span>+ Delivery charges applicable</span> · Limited stock — order now 🥭</div>
+<div class="announce">💰 Prices Reduced for Season 2026! <span>Save up to ₹200/dozen</span> · Limited stock — order now 🥭</div>
 
 <!-- NAV -->
 <nav id="topnav">
@@ -949,7 +965,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
   <a href="#reviews" onclick="toggleMenu()">Reviews</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="blog.html">📖 Blog</a>
-  <a href="#" onclick="waOpen('fab');toggleMenu();return false;">💬 Order on WhatsApp</a>
+  <a href="#" onclick="orderWhatsApp();toggleMenu();return false;">💬 Order on WhatsApp</a>
 </div>
 
 <!-- CART OVERLAY -->
@@ -986,7 +1002,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <p class="hero-desc">Handpicked Alphonso & Payari mangoes from GI-certified orchards of Devgad — no calcium carbide, no cold storage, no middlemen. Farm-direct delivery across Maharashtra including Mumbai, Pune, Kolhapur, Sangli, Nashik and more.</p>
     <div class="hero-btns">
       <a href="#shop" class="btn-primary">Shop the Season →</a>
-      <a href="#" onclick="waOpen('hero');return false;" class="btn-outline">
+      <a href="#" onclick="orderWhatsApp();return false;" class="btn-outline">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Order on WhatsApp
       </a>
@@ -1007,8 +1023,8 @@ footer{background:var(--ink);padding:72px 56px 36px}
 
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true"><div class="ticker-track">
-  <span class="tick-item">Delivery Charges Applicable</span><span class="tick-item">100% Authentic Devgad Hapus</span><span class="tick-item">5 Grades — Pick Your Size</span><span class="tick-item">Payari Mangoes Also Available</span><span class="tick-item">No Calcium Carbide · No Cold Storage</span><span class="tick-item">WhatsApp Order Mumbai · Thane · Pune</span>
-  <span class="tick-item">Delivery Charges Applicable</span><span class="tick-item">100% Authentic Devgad Hapus</span><span class="tick-item">5 Grades — Pick Your Size</span><span class="tick-item">Payari Mangoes Also Available</span><span class="tick-item">No Calcium Carbide · No Cold Storage</span><span class="tick-item">WhatsApp Order Mumbai · Thane · Pune</span>
+  <span class="tick-item">Prices Reduced for Season 2026</span><span class="tick-item">100% Authentic Devgad Hapus</span><span class="tick-item">5 Grades — Pick Your Size</span><span class="tick-item">Payari Mangoes Also Available</span><span class="tick-item">No Calcium Carbide · No Cold Storage</span><span class="tick-item">WhatsApp Order Mumbai · Thane · Pune</span>
+  <span class="tick-item">Prices Reduced for Season 2026</span><span class="tick-item">100% Authentic Devgad Hapus</span><span class="tick-item">5 Grades — Pick Your Size</span><span class="tick-item">Payari Mangoes Also Available</span><span class="tick-item">No Calcium Carbide · No Cold Storage</span><span class="tick-item">WhatsApp Order Mumbai · Thane · Pune</span>
 </div></div>
 
 <!-- TRUST -->
@@ -1018,6 +1034,26 @@ footer{background:var(--ink);padding:72px 56px 36px}
   <div class="trust-item"><div class="ti-icon">🚫</div><div><div class="ti-title">No Calcium Carbide</div><div class="ti-desc">100% naturally tree-ripened</div></div></div>
   <div class="trust-item"><div class="ti-icon">📦</div><div><div class="ti-title">No Cold Storage</div><div class="ti-desc">Farm to door in under 48 hours</div></div></div>
 </div>
+
+<section class="value-section" aria-label="Why choose Hapus Devgad">
+  <div class="value-grid">
+    <div class="value-card">
+      <div class="value-icon">💰</div>
+      <h3>Reduced prices across all grades</h3>
+      <p>Same authentic Devgad quality, now with a fresh season price cut to make every dozen more affordable.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🌿</div>
+      <h3>100% naturally ripened mangoes</h3>
+      <p>No carbide, no cold storage and no chemical ripening — just handpicked Devgad Alphonso delivered fresh.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🚚</div>
+      <h3>Farm-fresh delivery in 48 hours</h3>
+      <p>We pack and ship the same morning so you get ripe, fragrant mangoes quickly across Maharashtra.</p>
+    </div>
+  </div>
+</section>
 
 <!-- HAPUS 5-GRADE PRODUCT CARDS -->
 <section class="hapus-section" id="shop">
@@ -1030,6 +1066,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <article class="hcard" itemscope itemtype="https://schema.org/Product">
       <div class="hcard-img">
         <span class="grade-badge">Grade 1</span>
+        <span class="discount-badge">Price Reduced</span>
         <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 1 Jumbo Alphonso Mango 300-325g Mumbai delivery" width="300" height="180" loading="lazy">
       </div>
       <div class="hcard-body">
@@ -1051,6 +1088,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <article class="hcard" itemscope itemtype="https://schema.org/Product">
       <div class="hcard-img">
         <span class="grade-badge">Grade 2</span>
+        <span class="discount-badge">Price Reduced</span>
         <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 2 Super Large Alphonso Mango 275-300g" width="300" height="180" loading="lazy">
       </div>
       <div class="hcard-body">
@@ -1072,6 +1110,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <article class="hcard" style="border-color:var(--orange);box-shadow:0 0 0 2px rgba(249,101,0,0.15)" itemscope itemtype="https://schema.org/Product">
       <div class="hcard-img">
         <span class="grade-badge">Grade 3</span>
+        <span class="discount-badge">Price Reduced</span>
         <span class="popular-badge">⭐ Most Popular</span>
         <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 3 Large Alphonso Mango 250-275g most popular" width="300" height="180" loading="lazy">
       </div>
@@ -1094,6 +1133,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <article class="hcard" itemscope itemtype="https://schema.org/Product">
       <div class="hcard-img">
         <span class="grade-badge">Grade 4</span>
+        <span class="discount-badge">Price Reduced</span>
         <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 4 Medium Alphonso Mango 225-250g" width="300" height="180" loading="lazy">
       </div>
       <div class="hcard-body">
@@ -1115,6 +1155,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <article class="hcard" itemscope itemtype="https://schema.org/Product">
       <div class="hcard-img">
         <span class="grade-badge">Grade 5</span>
+        <span class="discount-badge">Price Reduced</span>
         <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/7c77f211-2f31-4cdd-b6e7-05b217340eb4_c0rpgq.jpg" alt="Devgad Hapus Grade 5 Standard Alphonso Mango 200-225g best for Aamras" width="300" height="180" loading="lazy">
       </div>
       <div class="hcard-body">
@@ -1385,16 +1426,16 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <h2 class="sec-h">Everything You Want<br><em>to Know</em></h2>
   </div>
   <div class="faq-list">
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Grade 1, 2, 3, 4 and 5?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">All grades are the same GI-certified Devgad Hapus Alphonso from our farm. The only difference is the size of each mango. Grade 1 (300–325g) is the largest and Grade 5 (200–225g) is the smallest. Taste and quality are equally authentic across all grades. Bigger mangoes have more pulp per fruit and are preferred for gifting.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which grade should I order?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Grade 3 (250–275g, ₹1,200) is our most popular and best value choice. If you want to gift or impress, choose Grade 1 or 2. If you're making Aamras at home, Grade 5 is perfect — same taste at the lowest price.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are these mangoes really from Devgad?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes. We source exclusively from GI-certified orchards in Devgad, Sindhudurg district, Maharashtra. No mixing with Ratnagiri or other origins.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you use calcium carbide for ripening?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Never. Our Hapus and Payari mangoes are naturally tree-ripened. We never use calcium carbide or any artificial ripening agents.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Hapus and Payari mangoes?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Hapus (Alphonso) is larger with buttery texture and intense flavour. Payari is smaller, highly fragrant and sweeter. Many customers order the Duo Hamper to enjoy both.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How fast is delivery in Mumbai?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We deliver within 48 hours across Mumbai, Thane, and Navi Mumbai. Mangoes are packed fresh the morning they ship — zero cold storage.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are there delivery charges?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Delivery charges are applicable for doorstep delivery. The exact charge depends on your location and will be confirmed when you place your order on WhatsApp at +91 94050 74998.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We accept UPI (Google Pay, PhonePe, Paytm) and bank transfer (NEFT/IMPS). Payment details are confirmed over WhatsApp after you place your order.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">My mangoes arrived raw. What do I do?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">This is normal! Devgad Hapus is sent slightly raw to protect it during transit. Keep them in the box at room temperature for 3–5 days. Do NOT refrigerate unripe mangoes. See our ripening guide on this page for step-by-step instructions.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you deliver to Pune and Nashik?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes, we deliver to Pune and Nashik. Contact us on WhatsApp at +91 94050 74998 for charges and details.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Grade 1, 2, 3, 4 and 5 Devgad Hapus? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">All grades are the same GI-certified Devgad Hapus Alphonso from our farm. The only difference is the size of each mango. Grade 1 (300–325g) is the largest and Grade 5 (200–225g) is the smallest. Taste and quality are equally authentic across all grades. Bigger mangoes have more pulp per fruit and are preferred for gifting.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which grade should I order? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Grade 3 (250–275g, ₹1,200) is our most popular and best value choice. If you want to gift or impress, choose Grade 1 or 2. If you're making Aamras at home, Grade 5 is perfect — same taste at the lowest price.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are these mangoes really from Devgad? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes. We source exclusively from GI-certified orchards in Devgad, Sindhudurg district, Maharashtra. No mixing with Ratnagiri or other origins.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you use calcium carbide for ripening? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Never. Our Hapus and Payari mangoes are naturally tree-ripened. We never use calcium carbide or any artificial ripening agents.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Hapus and Payari mangoes? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Hapus (Alphonso) is larger with buttery texture and intense flavour. Payari is smaller, highly fragrant and sweeter. Many customers order the Duo Hamper to enjoy both.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How fast is delivery in Mumbai? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We deliver within 48 hours across Mumbai, Thane, and Navi Mumbai. Mangoes are packed fresh the morning they ship — zero cold storage.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are there delivery charges? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Delivery charges are applicable for doorstep delivery. The exact charge depends on your location and will be confirmed when you place your order on WhatsApp at +91 94050 74998.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We accept UPI (Google Pay, PhonePe, Paytm) and bank transfer (NEFT/IMPS). Payment details are confirmed over WhatsApp after you place your order.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">My mangoes arrived raw. What do I do? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">This is normal! Devgad Hapus is sent slightly raw to protect it during transit. Keep them in the box at room temperature for 3–5 days. Do NOT refrigerate unripe mangoes. See our ripening guide on this page for step-by-step instructions.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you deliver to Pune and Nashik? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes, we deliver to Pune and Nashik. Contact us on WhatsApp at +91 94050 74998 for charges and details.</div></div></div>
   </div>
 </section>
 
@@ -1415,7 +1456,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <div class="cta-h">Season ends soon.<br><em>Order before it's over.</em></div>
     <div class="cta-sub">5 grades from ₹1,000–₹1,400 per dozen · + Delivery charges applicable</div>
   </div>
-  <a href="#" onclick="waOpen('cta');return false;" class="btn-white">Order on WhatsApp →</a>
+  <a href="#" onclick="orderWhatsApp();return false;" class="btn-white">Order on WhatsApp →</a>
 </div>
 
 
@@ -1485,7 +1526,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
     <div class="fcol"><h5>Contact</h5><ul class="flinks">
       <li><a href="tel:+919405074998">+91 94050 74998</a></li>
       <li><a href="#">Devgad, Maharashtra – 416613</a></li>
-      <li><a href="#" onclick="waOpen('fab');return false;">WhatsApp Order 💬</a></li>
+      <li><a href="#" onclick="orderWhatsApp();return false;">WhatsApp Order 💬</a></li>
       <li><a href="https://g.co/kgs/zveHhXM" target="_blank" rel="noopener">Google Reviews ★ 4.9</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul></div>
@@ -1500,7 +1541,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <div class="wa-tooltip">💬 Chat with us — reply in minutes!</div>
 
 <!-- WA FAB -->
-<a class="wa-fab" href="#" onclick="waOpen('fab');return false;" title="Order Devgad Hapus Mangoes on WhatsApp" aria-label="Order on WhatsApp">
+<a class="wa-fab" href="#" onclick="orderWhatsApp();return false;" title="Order Devgad Hapus Mangoes on WhatsApp" aria-label="Order on WhatsApp">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
