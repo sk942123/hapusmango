@@ -322,7 +322,12 @@ function sendOrder(){
   var finalUrl = 'https://wa.me/'+WA+'?text='+encodeURIComponent(buildMsg());
   
   // Track the final order click as a conversion
-  gtag_report_conversion(finalUrl);
+  gtag('event', 'conversion', {
+    'send_to': GOOGLE_CONVERSION_ID,
+    'event_callback': function() {
+      window.open(finalUrl, '_blank');
+    }
+  });
 }
 
 function renderCart(){
