@@ -386,21 +386,6 @@ function nlSubmit(){
   document.getElementById('nlPhone').value='';
 }
 
-function updateCountdown(){
-  var end=new Date('2026-06-30T23:59:59');
-  var diff=end-new Date();
-  if(diff<0) diff=0;
-  var dd=Math.floor(diff/86400000);
-  var hh=Math.floor((diff%86400000)/3600000);
-  var mm=Math.floor((diff%3600000)/60000);
-  var ss=Math.floor((diff%60000)/1000);
-  function p(n){return n<10?'0'+n:n;}
-  document.getElementById('cdD').textContent=p(dd);
-  document.getElementById('cdH').textContent=p(hh);
-  document.getElementById('cdM').textContent=p(mm);
-  document.getElementById('cdS').textContent=p(ss);
-}
-
 function toggleMenu(){
   var m=document.getElementById('mobileMenu');
   m.style.display=m.style.display==='flex'?'none':'flex';
@@ -951,8 +936,6 @@ footer{background:var(--ink);padding:72px 56px 36px}
   <ul class="nav-links">
     <li><a href="#shop">Shop</a></li>
     <li><a href="#story">Our Farm</a></li>
-    <li><a href="#gifting">Gifting</a></li>
-    <li><a href="#compare">Devgad vs Ratnagiri</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
@@ -1186,91 +1169,6 @@ footer{background:var(--ink);padding:72px 56px 36px}
   </div>
 </section>
 
-<!-- OTHER PRODUCTS -->
-<section class="other-products">
-  <div class="other-hdr">
-    <div><div class="sec-tag">Also Available</div><h2 class="sec-h">More from <em>Our Farm</em></h2></div>
-    <a href="#" onclick="waOpen('viewall');return false;" class="see-all">View All</a>
-  </div>
-  <div class="pgrid">
-    <article class="pcard">
-      <div class="pcard-img">
-        <span class="ptag ptag-new">Payari</span>
-        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/351029e9-6e6c-4ad4-8179-cd44cf1d3d11_tnwphi.jpg" alt="Payari Mango Box — 12 Payari Mangoes Devgad Sindhudurg rare variety" width="400" height="210" loading="lazy">
-      </div>
-      <div class="pcard-body">
-        <h3 class="pcard-name">Payari Box</h3>
-        <div class="pcard-wt">12 Payari mangoes · rare Devgad variety · sweeter & fragrant</div>
-        <div class="pcard-foot">
-          <div class="pcard-price">₹1,399</div>
-          <button class="add-btn" onclick="addToCart('Payari Box',1399);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1199);">+</button>
-        </div>
-      </div>
-    </article>
-    <article class="pcard">
-      <div class="pcard-img">
-        <span class="stock-badge">🎁 Popular Gift</span>
-        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846882/b0c37d6e-e438-4964-99df-34c0c59f8632_m6jct3.jpg" alt="Duo Gift Hamper — Devgad Hapus Alphonso and Payari Mango gift box Mumbai" width="400" height="210" loading="lazy">
-      </div>
-      <div class="pcard-body">
-        <h3 class="pcard-name">Duo Gift Hamper</h3>
-        <div class="pcard-wt">Hapus Alphonso + Payari · Premium mango gift box</div>
-        <div class="pcard-foot">
-          <div class="pcard-price">₹3,498</div>
-          <button class="add-btn" onclick="addToCart('Duo Gift Hamper',3499);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1199);">+</button>
-        </div>
-      </div>
-    </article>
-    <article class="pcard">
-      <div class="pcard-img">
-        <span class="ptag ptag-off">₹200 Off</span>
-        <img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774897908/OIP_1_eawgmp.webp" alt="Hapus Aamras 500g Alphonso mango pulp no preservatives ready to eat" width="400" height="210" loading="lazy">
-      </div>
-      <div class="pcard-body">
-        <h3 class="pcard-name">Hapus Aamras</h3>
-        <div class="pcard-wt">500g · Alphonso mango pulp · ready to eat · no preservatives</div>
-        <div class="pcard-foot">
-          <div class="pcard-price"><s>₹499</s>₹298</div>
-          <button class="add-btn" onclick="addToCart('Hapus Aamras',299);this.textContent='✓';this.style.background='#1A6B3C';var b=this;setTimeout(function(){b.textContent='+';b.style.background='#F96500';},1199);">+</button>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- PAYMENT STRIP -->
-<div class="payment-strip">
-  <div class="pay-item"><div class="pay-icon">💳</div>UPI / Google Pay / PhonePe</div>
-  <div class="pay-item"><div class="pay-icon">🏦</div>Bank Transfer (NEFT/IMPS)</div>
-  <div class="pay-item"><div class="pay-icon">🚚</div>+ Delivery charges applicable for doorstep delivery</div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="hiw">
-  <div style="text-align:center"><div class="sec-tag" style="justify-content:center">Simple & Easy</div><h2 class="sec-h">How to <em>Order</em></h2></div>
-  <div class="hiw-grid">
-    <div class="hiw-card"><span class="hiw-icon">🛒</span><div class="hiw-num">1</div><div class="hiw-title">Pick Your Grade</div><div class="hiw-desc">Choose your preferred size — Grade 1 (Jumbo) to Grade 5 (Standard)</div></div>
-    <div class="hiw-card"><span class="hiw-icon">💬</span><div class="hiw-num">2</div><div class="hiw-title">Order on WhatsApp</div><div class="hiw-desc">Add to cart and tap "Order on WhatsApp" — your order is pre-filled</div></div>
-    <div class="hiw-card"><span class="hiw-icon">✅</span><div class="hiw-num">3</div><div class="hiw-title">We Confirm</div><div class="hiw-desc">We confirm availability, delivery address and payment with you</div></div>
-    <div class="hiw-card"><span class="hiw-icon">🚚</span><div class="hiw-num">4</div><div class="hiw-title">Fresh Delivery</div><div class="hiw-desc">Packed fresh the same morning, delivered within 48 hours</div></div>
-  </div>
-</section>
-
-<!-- RIPENING TIPS -->
-<section class="ripen">
-  <div style="text-align:center">
-    <div class="sec-tag" style="justify-content:center">After Your Box Arrives</div>
-    <h2 class="sec-h">How to <em>Ripen Your Mangoes</em> at Home</h2>
-    <p style="color:var(--gray);font-size:0.95rem;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;">Devgad Hapus is sent slightly raw to protect it during transit. Follow these steps for perfect ripeness.</p>
-  </div>
-  <div class="ripen-grid">
-    <div class="ripen-card"><div class="ripen-step">1</div><h4>Keep at Room Temp</h4><p>Place mangoes in a cool, dry spot — not in the fridge, not in direct sunlight. Keep them in the box with the straw for the first 2–3 days.</p></div>
-    <div class="ripen-card"><div class="ripen-step">2</div><h4>Check on Day 3–4</h4><p>Look for a golden-yellow colour appearing from the top near the stem. A light floral aroma will start to fill the room — that's the sign.</p></div>
-    <div class="ripen-card"><div class="ripen-step">3</div><h4>Press Gently to Test</h4><p>A ripe Devgad Hapus gives slightly to gentle pressure — firm but not hard. If still very firm, give it another day.</p></div>
-    <div class="ripen-card"><div class="ripen-step">4</div><h4>Enjoy!</h4><p>Once ripe, refrigerate and consume within 2–3 days. Never refrigerate unripe mangoes — it stops the ripening process permanently.</p></div>
-  </div>
-</section>
-
 <!-- STORY / OUR FARM -->
 <section class="story" id="story">
   <div class="story-left">
@@ -1305,90 +1203,6 @@ footer{background:var(--ink);padding:72px 56px 36px}
     Follow @hapus.mangoes
   </a>
 </div>
-
-<!-- DEVGAD VS RATNAGIRI -->
-<section class="compare" id="compare">
-  <div style="text-align:center">
-    <div class="sec-tag" style="justify-content:center">Know Before You Buy</div>
-    <h2 class="sec-h">Devgad vs Ratnagiri —<br><em>What's the Difference?</em></h2>
-  </div>
-  <table class="comp-table">
-    <thead><tr><th>Feature</th><th>🥭 Devgad Alphonso (Ours)</th><th>🥭 Ratnagiri Alphonso</th></tr></thead>
-    <tbody>
-      <tr><td>Aroma</td><td>Intense, saffron-floral, fills the room</td><td>Fragrant but slightly milder</td></tr>
-      <tr><td>Taste</td><td>Bold honeyed sweetness, rich finish</td><td>Sweet with a slight tangy, citrus edge</td></tr>
-      <tr><td>Pulp colour</td><td>Deep saffron-orange</td><td>Golden yellow-orange</td></tr>
-      <tr><td>Texture</td><td>Silky smooth, zero fibre, melts on tongue</td><td>Smooth, occasionally slightly fibrous</td></tr>
-      <tr><td>Skin</td><td>Firm & thick — holds shape when ripe</td><td>Thinner — wrinkles when fully ripe</td></tr>
-      <tr><td>Shelf life</td><td>10–12 days naturally</td><td>Ripens faster, consume sooner</td></tr>
-      <tr><td>Best for</td><td>Aamras, gifting, connoisseurs</td><td>Direct eating, juicier preference</td></tr>
-      <tr><td>GI Certified</td><td>✅ Yes — Sindhudurg, Maharashtra</td><td>✅ Yes — Ratnagiri, Maharashtra</td></tr>
-    </tbody>
-  </table>
-  <div style="text-align:center;margin-top:36px">
-    <a href="blog.html" class="btn-primary">Read Full Comparison Guide →</a>
-  </div>
-</section>
-
-<!-- DELIVERY ZONES -->
-<div class="zones">
-  <p><strong>Delivering farm-fresh Devgad Hapus & Payari mangoes</strong> across Mumbai, Thane, Navi Mumbai, Pune and beyond — in under 48 hours.</p>
-</div>
-<section class="zones">
-  <p>
-    <strong>Now delivering Devgad Hapus & Payari mangoes across Maharashtra</strong><br>
-    Mumbai • Pune • Kolhapur • Sangli • Satara • Nashik • Solapur • Aurangabad • Nagpur • Konkan belt and nearby districts.
-  </p>
-  <p style="margin-top:8px;">
-    📦 Delivery time & charges depend on location — confirmed on WhatsApp before dispatch.
-  </p>
-</section>
-
-<!-- COUNTDOWN -->
-<div class="countdown">
-  <h3>🥭 Hapus Season Ends <em>Soon</em></h3>
-  <p>Alphonso season is short — don't miss it. Order before stock runs out.</p>
-  <div class="cd-boxes">
-    <div class="cd-box"><span class="cd-n" id="cdD">00</span><span class="cd-l">Days</span></div>
-    <div class="cd-box"><span class="cd-n" id="cdH">00</span><span class="cd-l">Hours</span></div>
-    <div class="cd-box"><span class="cd-n" id="cdM">00</span><span class="cd-l">Minutes</span></div>
-    <div class="cd-box"><span class="cd-n" id="cdS">00</span><span class="cd-l">Seconds</span></div>
-  </div>
-</div>
-
-<!-- GIFTING -->
-<section class="gifting" id="gifting">
-  <div><div class="sec-tag">For Every Occasion</div><h2 class="sec-h">Mango Gift Hampers &<br><em>Corporate Gifting</em></h2></div>
-  <div class="gift-grid">
-    <div class="gift-visual"><img src="https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846882/b0c37d6e-e438-4964-99df-34c0c59f8632_m6jct3.jpg" alt="Devgad Mango Gift Hamper Mumbai — Corporate Gifting Hapus Alphonso Payari" width="600" height="360" loading="lazy"></div>
-    <div class="gift-text">
-      <p>Looking for a <strong>premium mango gift box in Mumbai</strong>? Send a Duo Hapus & Payari Hamper to family, friends, or colleagues.</p>
-      <p>Perfect for <strong>corporate gifting, family occasions, weddings, and festive seasons</strong>. Beautifully packed and delivered fresh within 48 hours.</p>
-      <ul class="gift-bullets">
-        <li>Premium packaging — gifting-ready, no extra wrapping needed</li>
-        <li>Choose any grade from G1 to G5 for your hamper</li>
-        <li>Bulk & corporate gifting orders welcome</li>
-        <li>Delivery across Mumbai, Thane, Navi Mumbai & Pune</li>
-        <li>Order via WhatsApp — quick, easy, personalised</li>
-      </ul>
-      <a href="#" onclick="waOpen('gifting');return false;" class="btn-primary">Enquire for Gifting →</a>
-    </div>
-  </div>
-</section>
-
-<!-- COLLECTIONS -->
-<section class="collections">
-  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:0;">
-    <div><div class="sec-tag">Browse Range</div><h2 class="sec-h">Shop by<br><em>Collection</em></h2></div>
-    <a href="#" onclick="waOpen('viewall');return false;" class="see-all">View All</a>
-  </div>
-  <div class="cgrid">
-    <div class="ccard" onclick="waOpen('hapus3')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898676/product-jpeg-1000x1000_ydydob.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Alphonso</span><span class="c-sub">5 grades · GI-certified Devgad · In season now</span></div></div>
-    <div class="ccard" onclick="waOpen('payari')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898827/20210505_170705_04-72PCS-PAYRI-FULL-WOOD-BOX-PETI-PAYRI-scaled_q7famh.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Payari</span><span class="c-sub">Small, sweet & rare Devgad variety</span></div></div>
-    <div class="ccard" onclick="waOpen('aamras')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774898947/OIP_2_pm9ugi.webp') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Hapus Aamras Pulp</span><span class="c-sub">Ready to eat · No preservatives</span></div></div>
-    <div class="ccard" onclick="waOpen('gifting')"><div class="cbg" style="background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846886/60733749-c589-46eb-a41d-7f1ee3471366_rciuzx.jpg') center/cover no-repeat"></div><div style="position:absolute;inset:0;background:rgba(0,0,0,0.25)"></div><div class="c-label"><span class="c-name">Gift Hampers</span><span class="c-sub">Corporate & family gifting Mumbai</span></div></div>
-  </div>
-</section>
 
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
@@ -1471,154 +1285,6 @@ footer{background:var(--ink);padding:72px 56px 36px}
 
 
 <!-- ============================================================ -->
-<!-- HOW TO RIPEN HAPUS GUIDE -->
-<!-- ============================================================ -->
-<section id="ripen-guide" style="background:#FFFDF9;padding:80px 56px;border-top:1px solid rgba(249,101,0,0.1);" aria-label="How to ripen Devgad Hapus mango at home">
-  <div style="max-width:900px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:48px;">
-      <div class="sec-tag" style="justify-content:center;">Ripening Guide</div>
-      <h2 class="sec-h">How to Ripen Your <em>Hapus at Home</em></h2>
-      <p style="color:#6B5E52;font-size:0.97rem;line-height:1.8;margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto;">Your mangoes arrive slightly raw — this protects them during transit. Follow these simple steps for perfect sweetness in 3–5 days. 🥭</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px;">
-      <div style="background:white;border-radius:20px;padding:28px 24px;border:1px solid rgba(249,101,0,0.12);text-align:center;">
-        <div style="font-size:2.4rem;margin-bottom:14px;">📦</div>
-        <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:800;color:#1A0F00;margin-bottom:10px;">Step 1 — Keep in the Box</h3>
-        <p style="font-size:0.82rem;color:#6B5E52;line-height:1.7;">Leave mangoes in the original hay-packed box. Keep at room temperature in a cool, dry, ventilated spot. Do <strong>not</strong> refrigerate unripe mangoes — it stops ripening.</p>
-      </div>
-      <div style="background:white;border-radius:20px;padding:28px 24px;border:1px solid rgba(249,101,0,0.12);text-align:center;">
-        <div style="font-size:2.4rem;margin-bottom:14px;">⏳</div>
-        <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:800;color:#1A0F00;margin-bottom:10px;">Step 2 — Wait 3–5 Days</h3>
-        <p style="font-size:0.82rem;color:#6B5E52;line-height:1.7;">Hapus ripens naturally in 3–5 days depending on room temperature. In Mumbai summers (30°C+), expect 2–3 days. In cooler areas like Pune hills, allow 4–5 days.</p>
-      </div>
-      <div style="background:white;border-radius:20px;padding:28px 24px;border:1px solid rgba(249,101,0,0.12);text-align:center;">
-        <div style="font-size:2.4rem;margin-bottom:14px;">👃</div>
-        <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:800;color:#1A0F00;margin-bottom:10px;">Step 3 — Check the Aroma</h3>
-        <p style="font-size:0.82rem;color:#6B5E52;line-height:1.7;">When Hapus is ready, the fragrance is unmistakable — sweet, saffron-like, detectable from a distance. Skin turns golden-yellow. Gentle squeeze should feel slightly soft.</p>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:36px;">
-      <div style="background:linear-gradient(135deg,#FFF3EB,#FFE8D0);border-radius:20px;padding:26px 24px;border:1px solid rgba(249,101,0,0.15);">
-        <div style="font-size:1.5rem;margin-bottom:10px;">✅ Do This</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:0.83rem;color:#1A0F00;line-height:1.6;">
-          <li>✔ Keep at room temperature (22–30°C)</li>
-          <li>✔ Store in original hay box for even ripening</li>
-          <li>✔ Soak ripe mangoes in cold water 30 min before eating</li>
-          <li>✔ Refrigerate <em>only after</em> fully ripe — keeps 2–3 days</li>
-          <li>✔ Check daily — once ripe, eat within 2 days</li>
-        </ul>
-      </div>
-      <div style="background:linear-gradient(135deg,#FFF5F5,#FFE0E0);border-radius:20px;padding:26px 24px;border:1px solid rgba(220,50,50,0.1);">
-        <div style="font-size:1.5rem;margin-bottom:10px;">❌ Avoid This</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:0.83rem;color:#1A0F00;line-height:1.6;">
-          <li>✗ Don't refrigerate raw mangoes — kills sweetness</li>
-          <li>✗ Don't stack heavy weight on top of mangoes</li>
-          <li>✗ Don't wash mangoes before storage</li>
-          <li>✗ Don't place near direct sunlight or heat source</li>
-          <li>✗ Don't squeeze mangoes to check — it bruises them</li>
-        </ul>
-      </div>
-    </div>
-    <div style="background:white;border-radius:20px;padding:24px 28px;border:1px solid rgba(249,101,0,0.12);display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-      <div style="font-size:2rem;">💡</div>
-      <div style="flex:1;min-width:200px;">
-        <div style="font-weight:700;color:#1A0F00;font-size:0.9rem;margin-bottom:4px;">Pro Tip — Aamras Hack</div>
-        <p style="font-size:0.82rem;color:#6B5E52;line-height:1.6;">For Aamras, use Grade 5 or 6 (smallest size). Once fully ripe, squeeze the mango, make a small slit, and squeeze pulp directly into a bowl. Sweeter than any store-bought pulp — and made in minutes!</p>
-      </div>
-      <a href="#" onclick="waOpen('hapus5');return false;" style="background:#F96500;color:white;padding:12px 22px;border-radius:100px;font-size:0.8rem;font-weight:700;text-decoration:none;white-space:nowrap;">Order Aamras Grade →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- CITY DELIVERY LANDING SECTIONS — Mumbai + Pune detailed      -->
-<!-- ============================================================ -->
-<section id="delivery-mumbai" style="background:#FFF9F5;padding:72px 56px 48px;" aria-label="Hapus mango delivery in Mumbai">
-  <div style="max-width:1080px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:40px;">
-      <div class="sec-tag" style="justify-content:center;">🏙️ Mumbai Delivery</div>
-      <h2 class="sec-h">Devgad Hapus Delivery<br>Across <em>Mumbai</em></h2>
-      <p style="color:#6B5E52;font-size:0.95rem;line-height:1.8;margin-top:12px;">We deliver farm-fresh GI-certified Devgad Hapus mangoes to every corner of Mumbai — from South Mumbai to the suburbs. Order on WhatsApp and get delivery within 48 hours.</p>
-    </div>
-    <!-- Western Line -->
-    <div style="margin-bottom:32px;">
-      <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:800;color:#1A0F00;margin-bottom:14px;display:flex;align-items:center;gap:10px;"><span style="background:#F96500;color:white;padding:3px 12px;border-radius:100px;font-size:0.72rem;letter-spacing:0.08em;">WESTERN LINE</span></h3>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="#" onclick="waOpen('fab');return false;" class="city-tag">Churchgate</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Marine Lines</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Charni Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Grant Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mumbai Central</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mahalaxmi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Lower Parel</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Elphinstone</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Dadar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Matunga Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mahim</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Bandra</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Khar Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Santacruz</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Vile Parle</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Andheri</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Jogeshwari</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Goregaon</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Malad</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kandivali</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Borivali</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Dahisar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mira Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Bhayander</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Nalasopara</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Virar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Vasai</a>
-      </div>
-    </div>
-    <!-- Central Line -->
-    <div style="margin-bottom:32px;">
-      <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:800;color:#1A0F00;margin-bottom:14px;"><span style="background:#1A6B3C;color:white;padding:3px 12px;border-radius:100px;font-size:0.72rem;letter-spacing:0.08em;">CENTRAL LINE</span></h3>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="#" onclick="waOpen('fab');return false;" class="city-tag">CST</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Sandhurst Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Byculla</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Chinchpokli</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Currey Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Parel</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Dadar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Matunga</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Sion</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kurla</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Vidyavihar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Ghatkopar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Vikhroli</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kanjurmarg</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Bhandup</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Nahur</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mulund</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Thane</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kalwa</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mumbra</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Diva</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Dombivli</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kalyan</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Badlapur</a>
-      </div>
-    </div>
-    <!-- Harbour + South Mumbai -->
-    <div style="margin-bottom:32px;">
-      <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:800;color:#1A0F00;margin-bottom:14px;"><span style="background:#FFB800;color:#1A0F00;padding:3px 12px;border-radius:100px;font-size:0.72rem;letter-spacing:0.08em;">SOUTH MUMBAI & HARBOUR</span></h3>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="#" onclick="waOpen('fab');return false;" class="city-tag">Colaba</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Cuffe Parade</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Nariman Point</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Malabar Hill</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Breach Candy</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Worli</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Prabhadevi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Shivaji Park</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Wadala</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Chembur</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Govandi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mankhurd</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Trombay</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Powai</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Hiranandani</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Sewri</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mazgaon</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Antop Hill</a>
-      </div>
-    </div>
-    <!-- Navi Mumbai -->
-    <div style="margin-bottom:28px;">
-      <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:800;color:#1A0F00;margin-bottom:14px;"><span style="background:#6B5E52;color:white;padding:3px 12px;border-radius:100px;font-size:0.72rem;letter-spacing:0.08em;">NAVI MUMBAI</span></h3>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="#" onclick="waOpen('fab');return false;" class="city-tag">Vashi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Nerul</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Belapur</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kharghar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Panvel</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Airoli</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Ghansoli</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Koparkhairane</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Turbhe</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Sanpada</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Juinagar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Ulwe</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Dronagiri</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Taloja</a>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:8px;">
-      <a href="#" onclick="waOpen('fab');return false;" class="btn-primary" style="display:inline-flex;">Order Mumbai Delivery on WhatsApp 🥭</a>
-    </div>
-  </div>
-</section>
-
-<!-- PUNE Delivery Section -->
-<section id="delivery-pune" style="background:white;padding:72px 56px 48px;border-top:1px solid rgba(249,101,0,0.08);" aria-label="Hapus mango delivery in Pune">
-  <div style="max-width:1080px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:40px;">
-      <div class="sec-tag" style="justify-content:center;">🏙️ Pune Delivery</div>
-      <h2 class="sec-h">Devgad Hapus Delivery<br>Across <em>Pune</em></h2>
-      <p style="color:#6B5E52;font-size:0.95rem;line-height:1.8;margin-top:12px;">Searching for authentic Hapus mango in Pune? We deliver GI-certified Devgad Alphonso to every area of Pune and PCMC. WhatsApp your address and we'll confirm delivery.</p>
-    </div>
-    <div style="margin-bottom:32px;">
-      <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:800;color:#1A0F00;margin-bottom:14px;"><span style="background:#F96500;color:white;padding:3px 12px;border-radius:100px;font-size:0.72rem;letter-spacing:0.08em;">WEST PUNE & PCMC</span></h3>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="#" onclick="waOpen('fab');return false;" class="city-tag">Baner</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Balewadi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Wakad</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Hinjewadi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Aundh</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Bopodi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Pimple Saudagar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Pimple Nilakh</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Pimple Gurav</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Chinchwad</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Akurdi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Nigdi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Bhosari</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Moshi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Chakan</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Talegaon</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Dehu Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kiwale</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Ravet</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Tathawade</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Sus Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Mahalunge</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Pashan</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Bavdhan</a>
-      </div>
-    </div>
-    <div style="margin-bottom:32px;">
-      <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:800;color:#1A0F00;margin-bottom:14px;"><span style="background:#1A6B3C;color:white;padding:3px 12px;border-radius:100px;font-size:0.72rem;letter-spacing:0.08em;">CENTRAL & EAST PUNE</span></h3>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="#" onclick="waOpen('fab');return false;" class="city-tag">Shivajinagar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Deccan</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kothrud</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Karve Nagar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Erandwane</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Model Colony</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Shivane</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Warje</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Sinhagad Road</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Dhayari</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Viman Nagar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kalyani Nagar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Koregaon Park</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kharadi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Wagholi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Manjri</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Dhanori</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Lohegaon</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Tingre Nagar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Nagar Road</a>
-      </div>
-    </div>
-    <div style="margin-bottom:28px;">
-      <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:800;color:#1A0F00;margin-bottom:14px;"><span style="background:#FFB800;color:#1A0F00;padding:3px 12px;border-radius:100px;font-size:0.72rem;letter-spacing:0.08em;">SOUTH PUNE</span></h3>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="#" onclick="waOpen('fab');return false;" class="city-tag">Pune Camp</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Swargate</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Katraj</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Kondhwa</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Wanowrie</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Bibwewadi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Hadapsar</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Magarpatta</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Undri</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Pisoli</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">NIBM</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Fursungi</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Khadakwasla</a><a href="#" onclick="waOpen('fab');return false;" class="city-tag">Ambegaon</a>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:8px;">
-      <a href="#" onclick="waOpen('fab');return false;" class="btn-primary" style="display:inline-flex;">Order Pune Delivery on WhatsApp 🥭</a>
-    </div>
-  </div>
-</section>
-
-<!-- Other Maharashtra Cities -->
-<section style="background:#FFF9F5;padding:48px 56px 40px;border-top:1px solid rgba(249,101,0,0.08);" aria-label="Delivery cities across Maharashtra">
-  <div style="max-width:1060px;margin:0 auto;text-align:center;">
-    <h2 style="font-family:'Fraunces',serif;font-size:1.45rem;font-weight:900;color:#1A0F00;margin-bottom:10px;">We Also Deliver Across Maharashtra</h2>
-    <p style="color:#6B5E52;font-size:0.88rem;line-height:1.8;margin-bottom:20px;">From Konkan to Vidarbha — fresh farm mangoes delivered to your door.</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 12px;font-size:0.78rem;font-weight:600;color:#F96500;">
-      <span>Nashik</span><span>·</span><span>Nagpur</span><span>·</span><span>Aurangabad</span><span>·</span><span>Kolhapur</span><span>·</span><span>Sangli</span><span>·</span><span>Satara</span><span>·</span><span>Solapur</span><span>·</span><span>Ahmednagar</span><span>·</span><span>Latur</span><span>·</span><span>Jalgaon</span><span>·</span><span>Dhule</span><span>·</span><span>Amravati</span><span>·</span><span>Akola</span><span>·</span><span>Chandrapur</span><span>·</span><span>Nanded</span><span>·</span><span>Parbhani</span><span>·</span><span>Raigad</span><span>·</span><span>Ratnagiri</span><span>·</span><span>Sindhudurg</span><span>·</span><span>Osmanabad</span><span>·</span><span>Hingoli</span><span>·</span><span>Buldhana</span><span>·</span><span>Washim</span><span>·</span><span>Yavatmal</span><span>·</span><span>Wardha</span><span>·</span><span>Beed</span>
-    </div>
-    <p style="margin-top:14px;font-size:0.78rem;color:#6B5E52;">Don't see your area? <a href="#" onclick="waOpen('fab');return false;" style="color:#F96500;font-weight:700;text-decoration:none;">WhatsApp us</a> — we deliver across Maharashtra.</p>
-  </div>
-</section>
-
-<!-- ============================================================ -->
 <!-- INSTAGRAM FEED EMBED                                         -->
 <!-- ============================================================ -->
 <section id="insta-section" style="background:white;padding:72px 56px;border-top:1px solid rgba(249,101,0,0.08);" aria-label="Instagram feed hapus mangoes">
@@ -1699,12 +1365,12 @@ footer{background:var(--ink);padding:72px 56px 36px}
       <li><a href="#" onclick="waOpen('hapus5');return false;">Grade 5 — Standard (₹899)</a></li>
       <li><a href="#" onclick="waOpen('hapus6');return false;">Grade 6 — Mini (₹799)</a></li>
     </ul></div>
-    <div class="fcol"><h5>More Products</h5><ul class="flinks">
-      <li><a href="#" onclick="waOpen('payari');return false;">Payari Mango Box</a></li>
-      <li><a href="#" onclick="waOpen('gifting');return false;">Duo Gift Hamper</a></li>
-      <li><a href="#" onclick="waOpen('aamras');return false;">Hapus Aamras Pulp</a></li>
+    <div class="fcol"><h5>More</h5><ul class="flinks">
       <li><a href="#story">Our Devgad Farm</a></li>
       <li><a href="blog.html">Mango Blog</a></li>
+      <li><a href="#reviews">Customer Reviews</a></li>
+      <li><a href="#delivery-mumbai">Mumbai Delivery Areas</a></li>
+      <li><a href="#delivery-pune">Pune Delivery Areas</a></li>
     </ul></div>
     <div class="fcol"><h5>Contact</h5><ul class="flinks">
       <li><a href="tel:+919405074998">+91 94050 74998</a></li>
@@ -1731,9 +1397,6 @@ footer{background:var(--ink);padding:72px 56px 36px}
 
 
 <script>
-updateCountdown();
-setInterval(updateCountdown,999);
-
 // Story Slider
 var storyIdx=0;
 var storySlides=document.querySelectorAll('.story-slide');
