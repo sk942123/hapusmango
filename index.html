@@ -41,14 +41,7 @@ function fireGadsConversion(label, url) {
   });
 }
 
-// Updated waOpen to use your specific wa.link
-function waOpen(type){
-  // Use your requested wa.link logic here
-  var waUrl = 'https://wa.link/e8oc1j'; 
-  
-  // Track conversion then redirect
-  gtag_report_conversion(waUrl);
-}
+// waOpen is defined below with full message logic + GA conversion tracking
 
 // Listener for manual links (like phone numbers)
 (function () {  
@@ -226,7 +219,14 @@ var MSGS={
 
 function waOpen(type){
   var msg=MSGS[type]||MSGS.fab;
-  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
+  var waUrl='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+  // Fire GA conversion, then open WhatsApp
+  gtag('event', 'conversion', {
+    'send_to': GOOGLE_CONVERSION_ID,
+    'event_callback': function(){ window.open(waUrl, '_blank'); }
+  });
+  // Fallback: open WhatsApp after 1s in case GA callback is delayed
+  setTimeout(function(){ window.open(waUrl, '_blank'); }, 1000);
 }
 
 function toggleCart(){
