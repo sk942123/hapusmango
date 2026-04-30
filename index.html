@@ -228,9 +228,9 @@ var MSGS={
   fab:     'Hi! 👋 I want to order fresh Devgad Hapus mangoes.\n\nCould you help with availability & delivery?\n\nThank you! 🥭',
   story:   'Hi! 👋 I read about your Devgad farm and want to order this season.\n\nCould you confirm stock, delivery & payment options?\n\nThank you! 🥭',
   viewall: 'Hi! 👋 I want to see your full range of Devgad mango products for Season 2026.\n\nThank you! 🥭',
-  hapus1:  'Hi! 👋 I want to order *Grade 1 — Jumbo Hapus*.\n\n🥭 Grade 1 – 300–325g each – ₹1,499/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
-  hapus2:  'Hi! 👋 I want to order *Grade 2 — Super Large Hapus*.\n\n🥭 Grade 2 – 275–300g each – ₹1,399/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
-  hapus3:  'Hi! 👋 I want to order *Grade 3 — Large Hapus*.\n\n🥭 Grade 3 – 250–275g each – ₹1,199/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
+  hapus1:  'Hi! 👋 I want to order *Grade 1 — Jumbo Hapus*.\n\n🥭 Grade 1 – 300–325g each – ₹1,299/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
+  hapus2:  'Hi! 👋 I want to order *Grade 2 — Super Large Hapus*.\n\n🥭 Grade 2 – 275–300g each – ₹1,199/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
+  hapus3:  'Hi! 👋 I want to order *Grade 3 — Large Hapus*.\n\n🥭 Grade 3 – 250–275g each – ₹1,099/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
   hapus4:  'Hi! 👋 I want to order *Grade 4 — Medium Hapus*.\n\n🥭 Grade 4 – 225–250g each – ₹999/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
   hapus5:  'Hi! 👋 I want to order *Grade 5 — Standard Hapus*.\n\n🥭 Grade 5 – 200–225g each – ₹899/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
   hapus6:  'Hi! 👋 I want to order *Grade 6 — Mini Hapus*.\n\n🥭 Grade 6 – 175–200g each – ₹799/dozen\n📦 Delivery charges applicable. Extra charges for doorstep delivery.\n\nCould you confirm availability & delivery?\n\nThank you!',
@@ -401,7 +401,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:va
 .announce{background:var(--green);color:white;text-align:center;padding:9px 16px;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;position:fixed;top:0;left:0;right:0;z-index:102}
 .announce span{color:var(--yellow)}
 
-nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
+nav{position:fixed;top:96px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s,top 0.3s}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand-name{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:900;letter-spacing:-0.04em;color:var(--ink)}
 .brand-name span{color:var(--orange)}
@@ -484,7 +484,8 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;display:flex;align-items:
 .hcard-wt{font-size:0.7rem;color:var(--gray);margin-bottom:4px}
 .hcard-desc{font-size:0.7rem;color:var(--gray);margin-bottom:14px;line-height:1.5}
 .hcard-foot{display:flex;align-items:center;justify-content:space-between}
-.hcard-price{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:900;color:var(--ink)}
+.hcard-price{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:900;color:var(--orange)}
+.hcard-price .old-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;font-weight:600;color:var(--gray);text-decoration:line-through;margin-right:4px;vertical-align:middle}
 .hcard-price span{font-size:0.68rem;font-weight:500;color:var(--gray);font-family:'Plus Jakarta Sans',sans-serif;display:block;margin-top:1px}
 /* ✅ Rating badge on cards */
 .hcard-rating{font-size:0.65rem;color:var(--orange);font-weight:700;margin-bottom:10px}
@@ -924,7 +925,20 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-565CJ63B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ANNOUNCE -->
-<div class="announce">🌿 Season 2026 is here! <span>+ Delivery charges applicable</span> · Limited stock — order now 🥭</div>
+<div class="announce">🎉 <span>Prices Lowered!</span> Grade 1 now ₹1,299 · Grade 2 ₹1,199 · Grade 3 ₹1,099 · Limited stock — order now 🥭</div>
+
+<!-- PRICE DROP BANNER -->
+<div id="priceDropBanner" style="position:fixed;top:38px;left:0;right:0;z-index:101;background:linear-gradient(90deg,#e65c00,#f9a825);color:white;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.15);font-family:'Plus Jakarta Sans',sans-serif;">
+  <div style="display:flex;align-items:center;gap:14px;flex:1;justify-content:center;flex-wrap:wrap;">
+    <span style="font-size:1.4rem;">&#127991;</span>
+    <div style="text-align:center;">
+      <div style="font-weight:800;font-size:1rem;letter-spacing:0.02em;">Prices Just Dropped This Season!</div>
+      <div style="font-size:0.78rem;opacity:0.92;margin-top:2px;">Save up to &#8377;200/dozen &middot; Same GI-certified Devgad Hapus, better price &#128249;</div>
+    </div>
+    <a href="#shop" onclick="document.getElementById('priceDropBanner').style.display='none';document.getElementById('topnav').style.top='38px';" style="background:white;color:#e65c00;font-weight:800;font-size:0.8rem;padding:8px 18px;border-radius:100px;text-decoration:none;white-space:nowrap;flex-shrink:0;">Shop Now &rarr;</a>
+  </div>
+  <button onclick="document.getElementById('priceDropBanner').style.display='none';document.getElementById('topnav').style.top='38px';" style="background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">&#10005;</button>
+</div>
 
 <!-- NAV -->
 <nav id="topnav">
@@ -1049,12 +1063,12 @@ footer{background:var(--ink);padding:72px 56px 36px}
         <div class="hcard-rating">★★★★★ 4.9 (2000+ reviews)</div>
         <div class="hcard-desc">Biggest size available. Extra-rich pulp, exceptional aroma. Ideal for gifting.</div>
         <div class="hcard-foot">
-          <div class="hcard-price">₹1,499<span>per dozen</span></div>
-          <button class="add-btn" id="addbtn-g1" onclick="addToCart('Hapus Grade 1 Jumbo (300-325g)',1499,'g1');document.getElementById('addbtn-g1').style.display='none';document.getElementById('qty-g1').style.display='flex';">+</button>
+          <div class="hcard-price"><span class="old-price">₹1,499</span>₹1,299<span>per dozen</span></div>
+          <button class="add-btn" id="addbtn-g1" onclick="addToCart('Hapus Grade 1 Jumbo (300-325g)',1299,'g1');document.getElementById('addbtn-g1').style.display='none';document.getElementById('qty-g1').style.display='flex';">+</button>
           <div class="qty-badge" id="qty-g1">
-            <button onclick="cardChangeQty('g1','Hapus Grade 1 Jumbo (300-325g)',1499,-1)">−</button>
+            <button onclick="cardChangeQty('g1','Hapus Grade 1 Jumbo (300-325g)',1299,-1)">−</button>
             <span class="qbadge-n">1</span>
-            <button onclick="cardChangeQty('g1','Hapus Grade 1 Jumbo (300-325g)',1499,1)">+</button>
+            <button onclick="cardChangeQty('g1','Hapus Grade 1 Jumbo (300-325g)',1299,1)">+</button>
           </div>
         </div>
       </div>
@@ -1070,12 +1084,12 @@ footer{background:var(--ink);padding:72px 56px 36px}
         <div class="hcard-rating">★★★★★ 4.9 (2000+ reviews)</div>
         <div class="hcard-desc">Premium size, full flavour. Great choice for families who love large mangoes.</div>
         <div class="hcard-foot">
-          <div class="hcard-price">₹1,399<span>per dozen</span></div>
-          <button class="add-btn" id="addbtn-g2" onclick="addToCart('Hapus Grade 2 Super Large (275-300g)',1399,'g2');document.getElementById('addbtn-g2').style.display='none';document.getElementById('qty-g2').style.display='flex';">+</button>
+          <div class="hcard-price"><span class="old-price">₹1,399</span>₹1,199<span>per dozen</span></div>
+          <button class="add-btn" id="addbtn-g2" onclick="addToCart('Hapus Grade 2 Super Large (275-300g)',1199,'g2');document.getElementById('addbtn-g2').style.display='none';document.getElementById('qty-g2').style.display='flex';">+</button>
           <div class="qty-badge" id="qty-g2">
-            <button onclick="cardChangeQty('g2','Hapus Grade 2 Super Large (275-300g)',1399,-1)">−</button>
+            <button onclick="cardChangeQty('g2','Hapus Grade 2 Super Large (275-300g)',1199,-1)">−</button>
             <span class="qbadge-n">1</span>
-            <button onclick="cardChangeQty('g2','Hapus Grade 2 Super Large (275-300g)',1399,1)">+</button>
+            <button onclick="cardChangeQty('g2','Hapus Grade 2 Super Large (275-300g)',1199,1)">+</button>
           </div>
         </div>
       </div>
@@ -1092,12 +1106,12 @@ footer{background:var(--ink);padding:72px 56px 36px}
         <div class="hcard-rating">★★★★★ 4.9 (2000+ reviews)</div>
         <div class="hcard-desc">Best value and most ordered size. Perfect balance of size, taste and price.</div>
         <div class="hcard-foot">
-          <div class="hcard-price">₹1,199<span>per dozen</span></div>
-          <button class="add-btn" id="addbtn-g3" onclick="addToCart('Hapus Grade 3 Large (250-275g)',1199,'g3');document.getElementById('addbtn-g3').style.display='none';document.getElementById('qty-g3').style.display='flex';">+</button>
+          <div class="hcard-price"><span class="old-price">₹1,199</span>₹1,099<span>per dozen</span></div>
+          <button class="add-btn" id="addbtn-g3" onclick="addToCart('Hapus Grade 3 Large (250-275g)',1099,'g3');document.getElementById('addbtn-g3').style.display='none';document.getElementById('qty-g3').style.display='flex';">+</button>
           <div class="qty-badge" id="qty-g3">
-            <button onclick="cardChangeQty('g3','Hapus Grade 3 Large (250-275g)',1199,-1)">−</button>
+            <button onclick="cardChangeQty('g3','Hapus Grade 3 Large (250-275g)',1099,-1)">−</button>
             <span class="qbadge-n">1</span>
-            <button onclick="cardChangeQty('g3','Hapus Grade 3 Large (250-275g)',1199,1)">+</button>
+            <button onclick="cardChangeQty('g3','Hapus Grade 3 Large (250-275g)',1099,1)">+</button>
           </div>
         </div>
       </div>
@@ -1249,7 +1263,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
   </div>
   <div class="faq-list">
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Grade 1, 2, 3, 4 and 5?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">All grades are the same GI-certified Devgad Hapus Alphonso from our farm. The only difference is the size of each mango. Grade 1 (300–325g) is the largest and Grade 5 (200–225g) is the smallest. Taste and quality are equally authentic across all grades. Bigger mangoes have more pulp per fruit and are preferred for gifting.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which grade should I order?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Grade 3 (250–275g, ₹1,399) is our most popular and best value choice. If you want to gift or impress, choose Grade 1 or 2. If you're making Aamras at home, Grade 5 is perfect — same taste at the lowest price.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which grade should I order?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Grade 3 (250–275g, ₹1,099) is our most popular and best value choice. If you want to gift or impress, choose Grade 1 or 2. If you're making Aamras at home, Grade 5 is perfect — same taste at a great price.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are these mangoes really from Devgad?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes. We source exclusively from GI-certified orchards in Devgad, Sindhudurg district, Maharashtra. No mixing with Ratnagiri or other origins.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you use calcium carbide for ripening?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Never. Our Hapus and Payari mangoes are naturally tree-ripened. We never use calcium carbide or any artificial ripening agents.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the difference between Hapus and Payari mangoes?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Hapus (Alphonso) is larger with buttery texture and intense flavour. Payari is smaller, highly fragrant and sweeter. Many customers order the Duo Hamper to enjoy both.</div></div></div>
@@ -1276,7 +1290,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <div class="cta">
   <div>
     <div class="cta-h">Season ends soon.<br><em>Order before it's over.</em></div>
-    <div class="cta-sub">6 grades from ₹799–₹1,499 per dozen · + Delivery charges applicable</div>
+    <div class="cta-sub">6 grades from ₹999–₹1,299 per dozen · + Delivery charges applicable</div>
   </div>
   <a href="#" onclick="waOpen('cta');return false;" class="btn-white">Order on WhatsApp →</a>
 </div>
@@ -1357,9 +1371,9 @@ footer{background:var(--ink);padding:72px 56px 36px}
       </div>
     </div>
     <div class="fcol"><h5>Shop Hapus</h5><ul class="flinks">
-      <li><a href="#" onclick="waOpen('hapus1');return false;">Grade 1 — Jumbo (₹1,499)</a></li>
-      <li><a href="#" onclick="waOpen('hapus2');return false;">Grade 2 — Super Large (₹1,399)</a></li>
-      <li><a href="#" onclick="waOpen('hapus3');return false;">Grade 3 — Large (₹1,199) ⭐</a></li>
+      <li><a href="#" onclick="waOpen('hapus1');return false;">Grade 1 — Jumbo (₹1,299)</a></li>
+      <li><a href="#" onclick="waOpen('hapus2');return false;">Grade 2 — Super Large (₹1,199)</a></li>
+      <li><a href="#" onclick="waOpen('hapus3');return false;">Grade 3 — Large (₹1,099) ⭐</a></li>
       <li><a href="#" onclick="waOpen('hapus4');return false;">Grade 4 — Medium (₹999)</a></li>
       <li><a href="#" onclick="waOpen('hapus5');return false;">Grade 5 — Standard (₹899)</a></li>
       <li><a href="#" onclick="waOpen('hapus6');return false;">Grade 6 — Mini (₹799)</a></li>
