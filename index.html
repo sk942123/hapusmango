@@ -396,7 +396,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
 .logo-mark{width:48px;height:48px;flex-shrink:0;border-radius:8px;object-fit:cover}
 
-.announce{background:var(--green);color:white;text-align:center;padding:9px 16px;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;position:fixed;top:0;left:0;right:0;z-index:101}
+.announce{background:var(--green);color:white;text-align:center;padding:9px 16px;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;position:fixed;top:68px;left:0;right:0;z-index:99}
 .announce span{color:var(--yellow)}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
@@ -416,7 +416,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 #mobileMenu a{display:block;padding:14px 0;font-size:0.9rem;font-weight:600;color:var(--gray);text-decoration:none;border-bottom:1px solid var(--border);letter-spacing:0.04em}
 #mobileMenu a:last-child{border-bottom:none;color:var(--orange)}
 
-.hero{min-height:100vh;padding-top:106px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/afa34935-d19c-48a7-b98e-2fb08ab38b53_qcfuxg.jpg') center/cover no-repeat}
+.hero{min-height:100vh;padding-top:280px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:url('https://res.cloudinary.com/dxsgc5a35/image/upload/v1774846883/afa34935-d19c-48a7-b98e-2fb08ab38b53_qcfuxg.jpg') center/cover no-repeat}
 .hero::before{content:'';position:absolute;inset:0;background:rgba(255,243,225,0.72);pointer-events:none;z-index:1}
 .hero-left{padding:80px 48px 80px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--orange-pale);border:1px solid rgba(249,101,0,0.2);color:var(--orange);border-radius:100px;padding:6px 16px;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:32px;width:fit-content}
@@ -680,8 +680,8 @@ footer{background:var(--ink);padding:72px 56px 36px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
 @media(max-width:1024px){
-  .announce{font-size:0.68rem;padding:8px 12px}
-  nav{padding:0 20px;top:34px;height:60px}
+  .announce{font-size:0.68rem;padding:8px 12px;top:60px}
+  nav{padding:0 20px;top:0;height:60px}
   .nav-links{display:none}
   .hamburger{display:flex}
   #mobileMenu{top:94px}
@@ -722,8 +722,8 @@ footer{background:var(--ink);padding:72px 56px 36px}
 }
 
 @media(max-width:600px){
-  .announce{font-size:0.65rem;padding:8px 10px;line-height:1.4}
-  nav{top:32px;height:56px;padding:0 16px}
+  .announce{font-size:0.65rem;padding:8px 10px;line-height:1.4;top:56px}
+  nav{top:0;height:56px;padding:0 16px}
   #mobileMenu{top:88px}
   .brand-name{font-size:1.3rem}
   .logo-mark{width:36px;height:36px}
@@ -926,7 +926,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 <div class="announce">🔥 <span>End of Season Sale!</span> Grade 1 ₹799 · Grade 3 ₹599 · Grade 6 from ₹299 — Season ends May 31. Last chance to order! 🥭</div>
 
 <!-- MUMBAI & PUNE SPECIAL MESSAGE -->
-<div id="cityOfferBanner" style="position:fixed;left:0;right:0;z-index:99;background:linear-gradient(90deg,#1a0f00,#3d1f00);color:white;padding:16px 24px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;border-bottom:2px solid rgba(249,101,0,0.4);">
+<div id="cityOfferBanner" style="position:fixed;top:106px;left:0;right:0;z-index:99;background:linear-gradient(90deg,#1a0f00,#3d1f00);color:white;padding:16px 24px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;border-bottom:2px solid rgba(249,101,0,0.4);">
   <div style="max-width:900px;margin:0 auto;">
     <div style="font-size:1.05rem;font-weight:800;letter-spacing:0.01em;margin-bottom:4px;">
       🥭 Mumbai &amp; Pune Customers — Prices Slashed! Grade 1 Now Just ₹799/dozen!
@@ -939,7 +939,7 @@ footer{background:var(--ink);padding:72px 56px 36px}
 </div>
 
 <!-- END OF SEASON SALE BANNER (JS date-gated — shows only while season is live) -->
-<div id="eosBar" style="display:none;position:fixed;left:0;right:0;z-index:99;background:linear-gradient(135deg,#7b0000,#c0392b);color:white;padding:18px 24px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;border-bottom:3px solid rgba(255,100,100,0.35);">
+<div id="eosBar" style="display:none;position:fixed;top:186px;left:0;right:0;z-index:99;background:linear-gradient(135deg,#7b0000,#c0392b);color:white;padding:18px 24px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;border-bottom:3px solid rgba(255,100,100,0.35);">
   <div style="max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px;">
     <div>
       <div style="font-size:1.1rem;font-weight:900;letter-spacing:0.02em;margin-bottom:3px;">
@@ -969,49 +969,6 @@ footer{background:var(--ink);padding:72px 56px 36px}
     document.getElementById('eosBar').style.display = 'block';
   }
 })();
-
-// Stack all fixed banners and position nav below them
-function stackBanners(){
-  var announce = document.querySelector('.announce');
-  var city = document.getElementById('cityOfferBanner');
-  var eos = document.getElementById('eosBar');
-  var nav = document.getElementById('topnav');
-  var menu = document.getElementById('mobileMenu');
-
-  var offset = 0;
-
-  if(announce && announce.offsetParent !== null){
-    announce.style.top = offset + 'px';
-    offset += announce.offsetHeight;
-  }
-  if(city && city.style.display !== 'none'){
-    city.style.top = offset + 'px';
-    offset += city.offsetHeight;
-  }
-  if(eos && eos.style.display !== 'none'){
-    eos.style.top = offset + 'px';
-    offset += eos.offsetHeight;
-  }
-
-  var navH = nav ? nav.offsetHeight : 68;
-  if(nav) nav.style.top = offset + 'px';
-  if(menu) menu.style.top = (offset + navH) + 'px';
-
-  // Push hero content below fixed stack
-  var hero = document.querySelector('.hero');
-  if(hero) hero.style.paddingTop = (offset + navH) + 'px';
-}
-
-// Patch dismiss buttons to re-stack after closing
-(function(){
-  var cityBtn = document.querySelector('#cityOfferBanner button');
-  var eosBtn = document.querySelector('#eosBar button');
-  if(cityBtn){ var orig=cityBtn.onclick; cityBtn.onclick=function(){ if(orig)orig.call(this); stackBanners(); }; }
-  if(eosBtn){ var orig2=eosBtn.onclick; eosBtn.onclick=function(){ if(orig2)orig2.call(this); stackBanners(); }; }
-})();
-
-window.addEventListener('load', stackBanners);
-window.addEventListener('resize', stackBanners);
 </script>
 
 <!-- NAV -->
